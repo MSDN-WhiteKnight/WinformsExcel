@@ -1,0 +1,11 @@
+﻿1.1 
+(05.12.2016)
+- Fixed bug when saved file was not accessible until application is closed after using SaveIntoFile method
+- New control S_AdvancedDataGrid - substitutes the functionality of AdvancedDataGrid control with some combination of standard controls
+- New types: S_DataSheet, IDataGrid
+(15.12.2016)
+- New control C_AdvancedDataGrid - wrapper control for AdvancedDataGrid, allowing make application compatible with no-Excel machines
+- New type: GridMode enumeration
+- S_AdvancedDataGrid: added property - ReadOnly
+- AdvancedDataGrid: added property - Inactive
+

@@ -1,0 +1,2359 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="WinFormsControl.files/filelist.xml">
+<link rel=Edit-Time-Data href="WinFormsControl.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>WinForms Excel Library (</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="country-region"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="metricconverter"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>mycomp</o:Author>
+  <o:LastAuthor>mycomp</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>96</o:TotalTime>
+  <o:Created>2017-01-14T08:09:00Z</o:Created>
+  <o:LastSaved>2017-01-14T08:09:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>2340</o:Words>
+  <o:Characters>13339</o:Characters>
+  <o:Lines>111</o:Lines>
+  <o:Paragraphs>31</o:Paragraphs>
+  <o:CharactersWithSpaces>15648</o:CharactersWithSpaces>
+  <o:Version>11.9999</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-520092929 1073806591 9 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	font-family:Arial;
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:413674291;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-357110870 68747265 68747267 68747269 68747265 68747267 68747269 68747265 68747267 68747269;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<h1><span class=SpellE><span lang=EN-US style='mso-ansi-language:EN-US'>WinForms</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'> Excel Library (.NET Component) <o:p></o:p></span></h1>
+
+<p class=MsoNormal><u><span lang=EN-US style='mso-ansi-language:EN-US'>Version:</span></u><span
+lang=EN-US style='mso-ansi-language:EN-US'> 1.1<o:p></o:p></span></p>
+
+<p class=MsoNormal><u><span lang=EN-US style='mso-ansi-language:EN-US'>Developer:</span></u><span
+lang=EN-US style='mso-ansi-language:EN-US'> <span class=SpellE>MSDN.WhiteKnight</span>
+ <o:p></o:p></span></p>
+
+<p class=MsoNormal><u><span lang=EN-US style='mso-ansi-language:EN-US'>Web
+site:</span></u><span lang=EN-US style='mso-ansi-language:EN-US'> <a
+href="http://smallsoft2.blogspot.ru/">http://smallsoft2.blogspot.ru/</a><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><u><span lang=EN-US style='mso-ansi-language:EN-US'>Requirements:<o:p></o:p></span></u></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>Visual
+Studio 2010+<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>.NET
+Framework 4.0 (must be present on target machine)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>MS Excel
+2003+ (must be present on target machine)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US style='mso-ansi-language:EN-US'>Overview<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span class=SpellE><span lang=EN-US style='mso-ansi-language:
+EN-US'>WinForms</span></span><span lang=EN-US style='mso-ansi-language:EN-US'>
+Excel Library allows <span class=GramE>to host</span> MS Excel interface in
+Windows Forms application as a user control in order to display and edit one or
+more tables of data. The Excel application is started in different process, but
+the interface is fully integrated into your application as for any usual
+control. Basically, it works like <span class=SpellE>DataGridView</span>, but
+enables user to take advantage of various data processing and visualization
+capabilities of MS Excel, which might be useful in scientific, engineering or
+financial applications. The library interacts with Excel via Primary <span
+class=SpellE>Interop</span> Assemblies. Currently implemented functionality:<o:p></o:p></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Filling data from files, <span
+     class=SpellE>DataTable</span> objects or manually on cell-by-cell basis;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Displaying and editing one or
+     several tables in your form in Excel GUI;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Getting data back as <span
+     class=SpellE>DataTable</span> objects or getting the content of specific
+     cells;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Saving data into file;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Adding charts;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Manipulating worksheets: adding,
+     deleting, reordering, changing names, changing active sheet;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Showing/hiding Excel formula
+     bar and status bar;<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+     lang=EN-US style='mso-ansi-language:EN-US'>Direct access to Excel
+     interoperability interfaces via Application object.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>The library
+distribution package contains demo application project (Visual Studio 2010)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:467.4pt;
+ height:312pt'>
+ <v:imagedata src="WinFormsControl.files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=623 height=416
+src="WinFormsControl.files/image002.jpg" v:shapes="_x0000_i1025"><![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+style='mso-ansi-language:EN-US'><!--[if gte vml 1]><v:shape id="_x0000_i1026"
+ type="#_x0000_t75" style='width:467.4pt;height:336pt'>
+ <v:imagedata src="WinFormsControl.files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=623 height=448
+src="WinFormsControl.files/image004.jpg" v:shapes="_x0000_i1026"><![endif]><o:p></o:p></span></p>
+
+<h2><span lang=EN-US style='mso-ansi-language:EN-US'>Usage<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>The library
+functionality is provided via <span class=SpellE>ExtraControls.AdvancedDataGrid</span>
+user control. In order to use it in <span class=SpellE>WinForms</span>
+application, do the following:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>1. Copy <i
+style='mso-bidi-font-style:normal'>WinFormsExcel.dll, Interop.Excel.dll,
+Interop.Microsoft.Office.Core.dll</i> assemblies in your project, and add
+reference to <span class=SpellE><i style='mso-bidi-font-style:normal'>WinFormsExcel</i></span>
+assembly.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>2. Open
+Windows Forms designer, right-click toolbox, click &quot;Choose elements&quot;.
+Click &quot;Browse&quot;, and choose WinFormsExcel.dll. AdvancedDataGrid will
+appear in &quot;NET Components&quot; list.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>3. Check
+AdvancedDataGrid and click OK. AdvancedDataGrid will appear in toolbox under
+&quot;Other&quot; category.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>4. Drag
+AdvancedDataGrid onto the form.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>5. Adjust
+control's appearance properties such as border, background color, to
+distinguish it visually from form's background.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>Note:
+control will look empty in designer, because Excel is not initialized yet.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>6. Place <span
+class=SpellE><span class=GramE>advancedDataGrid.<span style='color:#00CCFF'>InitializeExcel</span></span></span><span
+class=GramE>(</span>) method call in your form's constructor or <span
+class=SpellE>OnLoad</span> event (this will create Excel process)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>7. Fill the
+grid with data using one of the following methods:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span></span><span lang=EN-US style='mso-ansi-language:EN-US'>
+void <span class=SpellE><span style='color:#00CCFF'>OpenFile</span></span>(string
+file);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span></span><span lang=EN-US style='mso-ansi-language:EN-US'>
+void <span class=SpellE><span style='color:#00CCFF'>SetCellContent</span></span>(<span
+class=SpellE>int</span> sheet, <span class=SpellE>int</span> row, <span
+class=SpellE>int</span> <span class=SpellE>col</span>, object <span
+class=SpellE>val</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span></span><span lang=EN-US style='mso-ansi-language:EN-US'>
+void <span class=SpellE><span style='color:#00CCFF'>SetSheetContent</span></span>(<span
+class=SpellE>int</span> sheet, <span class=SpellE>DataTable</span> t);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>Receive
+user input via one of the following methods:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span></span><span lang=EN-US style='mso-ansi-language:EN-US'> <span
+class=SpellE>DataTable</span> <span class=SpellE><span style='color:#00CCFF'>GetSheetContent</span></span>(<span
+class=SpellE>int</span> sheet, <span class=SpellE>bool</span> <span
+class=SpellE>FirstRowHasHeaders,int</span> <span class=SpellE>n_col</span>=0,int
+<span class=SpellE>n_row</span>=0);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='mso-ansi-language:
+EN-US'>public</span></span><span lang=EN-US style='mso-ansi-language:EN-US'>
+object <span class=SpellE><span style='color:#00CCFF'>GetCellContent</span></span>(<span
+class=SpellE>int</span> sheet, <span class=SpellE>int</span> row, <span
+class=SpellE>int</span> <span class=SpellE>col</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>Use other
+functionality, such as manipulating sheets, adding charts, or saving data to
+file. Note that sheet indices <span class=GramE>start from <st1:metricconverter
+ProductID="1 in" w:st="on">1 in</st1:metricconverter> excel</span>, and charts
+are treated as sheets as well.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>When you no
+longer need the control (for example, in <span class=SpellE>FormClosing</span>
+event), call <span class=GramE>advancedDataGrid1.<span style='color:#00CCFF'>Destroy</span>(</span>)
+method to clean up resources.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'>If you need
+your application to be work on machines without MS Excel installed (with lesser
+functionality), use <span class=SpellE>C_AdvancedDataGrid</span> control
+instead. It’s a wrapper that uses AdvancedDataGrid if Excel is <span
+class=GramE>present,</span> otherwise it substitutes its functionality with a
+combination of standard controls.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<h2><span lang=EN-US style='mso-ansi-language:EN-US'>Reference<o:p></o:p></span></h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='color:blue;mso-ansi-language:EN-US'>Assembly</span><span
+lang=EN-US style='mso-ansi-language:EN-US'> <i style='mso-bidi-font-style:normal'>WinFormsExcel.dll</i><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>namespace</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>ExtraControls</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:16.0pt'>AdvancedDataGrid class<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>class</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:#2B91AF'>AdvancedDataGrid</span>
+: <span class=SpellE>UserControl</span>, <span class=SpellE><span
+style='color:#2B91AF'>IDisposable</span></span><span style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Provides the functionality of
+hosting MS Excel window in Windows Forms application in order to display and
+edit one or several tables of data<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>AdvancedDataGrid
+</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>constructor:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> AdvancedDataGrid()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Creates <span
+class=SpellE>AdvacedDataGrid</span> control in uninitialized state.</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'> Call <span class=SpellE>InitializeExcel</span>
+method before actually using control.</span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>AdvancedDataGrid
+</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>properties:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><span
+style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>object</span> <span
+class=SpellE>DataSource</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Gets or sets
+the content of currently active Excel sheet via <span class=SpellE>DataTable</span>
+object<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Note: <span
+class=SpellE>AdvanceDataGrid</span> does not support data binding. <span
+class=SpellE>DataSource</span> Property is only a convenient way to manipulate
+active sheet’s contents.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>bool</span></span>
+<span class=SpellE>DisplayStatusBar</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Determines whether
+control should display Excel’s status bar<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Visible in designer.</span></span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:green;
+mso-ansi-language:EN-US'> Default value: false</span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>bool</span></span>
+<span class=SpellE>DisplayFormulaBar</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Determines whether control should
+display Excel’s formula bar<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Visible in designer.</span></span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:green;
+mso-ansi-language:EN-US'> Default value: false</span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>int</span></span>
+<span class=SpellE>ActiveSheet</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Gets or sets current active
+sheet.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Returns -1 on error.</span></span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:green;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>Excel.Application</span> <span
+class=SpellE>XlApplication</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Gets the underlying Excel Application object of this control instance
+(read-only).</span></span><span lang=EN-US style='font-size:9.5pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>
+You can use it to call Excel <span class=SpellE>interop</span> interfaces
+directly.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Returns null
+if Excel is not initialized.</span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>int</span></span>
+<span class=SpellE>SheetsCount</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Returns the amount of sheets in current workbook (read-only).</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'> Sheets include both worksheets
+and charts.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Returns -1 on error.</span></span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:green;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>bool</span></span>
+Inactive<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Specifies if
+control <span class=SpellE>intaracts</span> with user input<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>AdvancedDataGrid
+</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>methods:<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>InitializeExcel</span>()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Initializes Excel application and
+creates empty workbook for this control instance.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>This method creates new Excel
+process and changes control’s state into initialized.</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span>
+Destroy()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Cleans up
+resources of current AdvancedDataGrid control and closing Excel application.</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'> The control will be in
+uninitialized state.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>This method must be called before
+application is closing.</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>public</span></span><span lang=EN-US style='font-size:9.5pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+style='color:blue'>void</span> <span class=SpellE>SetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>,
+<span style='color:blue'>object</span> <span class=SpellE>val</span>)</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Sets contents of the cell
+specified by sheet, row and column numbers into an object of any type</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>object</span> <span
+class=SpellE>GetCellContent</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Gets the
+content of the cell specified by sheet, row and column numbers.</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Returns null in case of incorrect
+arguments.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>string</span> <span
+class=SpellE>GetCellAddress</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Gets the address
+of the cell specified by sheet, row and column numbers.</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>The address
+consists of column represented by letter, and row represented by number (such
+as “B12” for 2<sup>nd</sup> column 12<sup>th</sup> row).</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>SetSheetContent</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE>DataTable</span> t)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Fills the specified sheet with a
+content of given <span class=SpellE>DataTable</span> object<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DataTable</span> <span
+class=SpellE>GetSheetContent</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE><span style='color:blue'>bool</span></span> <span
+class=SpellE>FirstRowHasHeaders,<span style='color:blue'>int</span></span> <span
+class=SpellE>n_col</span>=0,<span style='color:blue'>int</span> <span
+class=SpellE>n_row</span>=0)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Loads content of specified sheet
+as <span class=SpellE>DataTable</span> object. </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Tries to guess column types based
+on first cells (uses string as default type).</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Arguments<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>Sheet: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Sheet number</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>FirstRowHasHeaders</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Specifies that first row contains column
+headers</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>n_col</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Maximum number of columns to load (0 -
+automatic)</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>n_row</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Maximum number of rows to load (0 -
+automatic)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>DeleteSheet</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+index)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Removes specified sheet from
+workbook. </span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Note: You can't remove all
+sheets. At least one sheet must be present in workbook all the time.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>AddSheet</span>(<span style='color:blue'>string</span> name=<span
+style='color:#A31515'>&quot;&quot;</span>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Adds new sheet into the workbook
+of this control instance<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>Name: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Worksheet name (optional). <span
+class=GramE>Will generate name automatically if omitted.</span><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:#2B91AF'>List</span>&lt;<span
+class=SpellE>XlSheet</span>&gt; <span class=SpellE>GetSheets</span>()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Gets information
+about all sheets in this control instance as a list of <span class=SpellE>XlSheet</span>
+objects.</span></span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>SetSheetName</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+<span class=SpellE>sheet,<span style='color:blue'>string</span></span> name)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Changes the
+name of specified sheet.</span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>string</span> <span
+class=SpellE>GetSheetName</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+sheet)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Returns the
+name of specified sheet.</span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>int</span></span>
+<span class=SpellE>FindSheet</span>(<span style='color:blue'>string</span>
+name)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Gets the
+index of sheet with specified name.</span></span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'> Returns -1 if the sheet is not found.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>MoveSheet</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+<span class=SpellE>curr_index</span>, <span class=SpellE><span
+style='color:blue'>int</span></span> <span class=SpellE>new_index,<span
+style='color:blue'>bool</span></span> before=<span style='color:blue'>true</span>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Inserts the worksheet before or
+after the target worksheet in the workbook<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Arguments<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>curr_index</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Number of sheet to move</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>new_index</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Target sheet index</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>before</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Specifies that sheet must be placed before
+the target sheet</span><span lang=EN-US style='font-size:9.5pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>SaveIntoFile</span>(<span style='color:blue'>string</span> file)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Saves the content of workbook into the file with specified path.</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>NewEmptyWorkbook</span>()<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Clears
+content of this <span class=SpellE>contol</span> instance’s workbook, and creates
+new workbook of default template.</span><span lang=EN-US style='mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>OpenFile</span>(<span style='color:blue'>string</span> file)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Loads the content of specified file into this control.</span></span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span> <span
+class=SpellE>AddChart</span>(<span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span style='color:blue'>string</span> cell1, <span style='color:blue'>string</span>
+cell2, <span class=SpellE>ChartType</span> ct = <span class=SpellE>ChartType.xlXYScatterLines,<span
+style='color:blue'>string</span></span> title = <span style='color:#A31515'>&quot;&quot;</span>
+)<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Adds Chart
+based on data of specified sheet into the workbook of this control.</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Arguments<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>sheet</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'>Number of sheet from which to use data for
+the chart</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:gray;mso-ansi-language:EN-US'>cell1: </span><span class=SpellE><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Addess</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'> of upper-left cell of chart’s
+source data range</span><span lang=EN-US style='font-size:9.5pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>cell2: </span><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Addess</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'> of lower-right cell of chart’s
+source data range</span><span lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:
+EN-US'>ct</span></span><span lang=EN-US style='font-size:9.5pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Chart type<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:
+EN-US'>title</span></span><span lang=EN-US style='font-size:9.5pt;font-family:
+Consolas;mso-bidi-font-family:Consolas;color:gray;mso-ansi-language:EN-US'>: </span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Chart title<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span lang=EN-US style='font-size:16.0pt;
+mso-ansi-language:EN-US'>XlSheet</span></span><span style='font-size:16.0pt'>
+class</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>class</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:#2B91AF'>XlSheet</span></span><span
+style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Represent Excel sheet (worksheet
+or chart) information. Returned by <span class=SpellE><span class=GramE>AdvancedDataGrid.GetSheets</span></span><span
+class=GramE>(</span>) method</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#2B91AF;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Public fields:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>int</span></span>
+Index;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Index of sheet in workbook
+(starts from 1)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>string</span> Name;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Name of sheet (displayed in tab)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>bool</span></span>
+<span class=SpellE>IsChart</span>;<o:p></o:p></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Specifies that this sheet is a chart.</span></span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'> Unlike with worksheets, you can’t
+manipulate content of chart sheets.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span lang=EN-US style='font-size:16.0pt;
+mso-ansi-language:EN-US'>ChartType</span></span><span lang=EN-US
+style='font-size:16.0pt'> </span><span lang=EN-US style='font-size:16.0pt;
+mso-ansi-language:EN-US'>enumeration</span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;color:green;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>enum</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE><span style='color:#2B91AF'>ChartType</span></span><span
+style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:green;mso-ansi-language:
+EN-US'>Represents Excel Chart type.</span></span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'> See Excel interface documentation for
+more information.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='text-indent:35.4pt;mso-layout-grid-align:none;
+text-autospace:none'><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Values:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>    </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlXYScatter</span></span> = -4169,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlRadar</span></span> = -4151,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlDoughnut</span></span> = -4120,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DPie = -4102,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DLine = -4101,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DColumn = -4100,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DArea = -4098,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlArea</span></span> = 1,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlLine</span></span> = 4,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPie</span></span> = 5,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlBubble</span></span> = 15,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlColumnClustered</span></span> =
+51,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlColumnStacked</span></span> = 52,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlColumnStacked100 = 53,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DColumnClustered = 54,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DColumnStacked = 55,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DColumnStacked100 = 56,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlBarClustered</span></span> = 57,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlBarStacked</span></span> = 58,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlBarStacked100 = 59,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DBarClustered = 60,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DBarStacked = 61,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DBarStacked100 = 62,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlLineStacked</span></span> = 63,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlLineStacked100 = 64,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlLineMarkers</span></span> = 65,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlLineMarkersStacked</span></span>
+= 66,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlLineMarkersStacked100 = 67,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPieOfPie</span></span> = 68,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPieExploded</span></span> = 69,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DPieExploded = 70,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlBarOfPie</span></span> = 71,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlXYScatterSmooth</span></span> =
+72,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlXYScatterSmoothNoMarkers</span></span>
+= 73,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlXYScatterLines</span></span> =
+74,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlXYScatterLinesNoMarkers</span></span>
+= 75,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlAreaStacked</span></span> = 76,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlAreaStacked100 = 77,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DAreaStacked = 78,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xl3DAreaStacked100 = 79,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlDoughnutExploded</span></span> =
+80,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlRadarMarkers</span></span> = 81,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlRadarFilled</span></span> = 82,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlSurface</span></span> = 83,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlSurfaceWireframe</span></span> =
+84,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlSurfaceTopView</span></span> =
+85,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlSurfaceTopViewWireframe</span></span>
+= 86,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span></span><span style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas'>xlBubble3DEffect = 87,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas'><span
+style='mso-spacerun:yes'>        </span><span class=SpellE>xlStockHLC</span> =
+88,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas'><span
+style='mso-spacerun:yes'>        </span><span class=SpellE>xlStockOHLC</span> =
+89,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlStockVHLC</span></span> = 90,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlStockVOHLC</span></span> = 91,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlCylinderColClustered</span></span>
+= 92,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlCylinderColStacked</span></span>
+= 93,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlCylinderColStacked100 = 94,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlCylinderBarClustered</span></span>
+= 95,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlCylinderBarStacked</span></span>
+= 96,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlCylinderBarStacked100 = 97,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlCylinderCol</span></span> = 98,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlConeColClustered</span></span> =
+99,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlConeColStacked</span></span> =
+100,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlConeColStacked100 = 101,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlConeBarClustered</span></span> =
+102,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlConeBarStacked</span></span> =
+103,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlConeBarStacked100 = 104,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlConeCol</span></span> = 105,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPyramidColClustered</span></span>
+= 106,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPyramidColStacked</span></span> =
+107,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlPyramidColStacked100 = 108,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPyramidBarClustered</span></span>
+= 109,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPyramidBarStacked</span></span> =
+110,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span>xlPyramidBarStacked100 = 111,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><span style='mso-spacerun:yes'>       
+</span><span class=SpellE><span class=GramE>xlPyramidCol</span></span> = 112<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span lang=EN-US style='font-size:16.0pt;
+mso-ansi-language:EN-US'>IDataGrid</span></span><span lang=EN-US
+style='font-size:16.0pt;mso-ansi-language:EN-US'> interface<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>interface</span> <span
+class=SpellE><span style='color:#2B91AF'>IDataGrid</span></span><span
+style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Provides a
+set of properties and methods shared by <span class=SpellE>DataGrid</span>
+controls able to display multiple data tables.</span></span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+color:green;mso-ansi-language:EN-US'> The library contains several
+implementations: AdvancedDataGrid, <span class=SpellE>S_AdvancedDataGrid</span>,
+<span class=SpellE><span class=GramE>C</span>_AdvancedDataGrid</span>. See
+AdvancedDataGrid description for more information about the meanings of these
+properties and methods.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Properties:</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>object</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DataSource</span> {<span
+class=SpellE><span style='color:blue'>get</span>;<span style='color:blue'>set</span></span>;}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>ActiveSheet</span> { <span style='color:blue'>get</span>; <span
+style='color:blue'>set</span>; }<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>SheetsCount</span> { <span style='color:blue'>get</span>; } <o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Methods:</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>,
+<span style='color:blue'>object</span> <span class=SpellE>val</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>object</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>GetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>);<span
+style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetSheetContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:#2B91AF'>DataTable</span></span> t);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>DataTable</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span class=GramE>GetSheetContent</span></span><span
+class=GramE>(</span><span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE><span style='color:blue'>bool</span></span> <span
+class=SpellE>FirstRowHasHeaders</span>, <span class=SpellE><span
+style='color:blue'>int</span></span> <span class=SpellE>n_col</span> = 0, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>n_row</span>
+= 0);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>GetActiveSheet</span>();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetActiveSheet</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> index);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DeleteSheet</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> index);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>AddSheet</span>(<span
+style='color:blue'>string</span> name = <span style='color:#A31515'>&quot;&quot;</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#2B91AF;mso-ansi-language:EN-US'>List</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'>&lt;<span class=SpellE><span style='color:#2B91AF'>XlSheet</span></span>&gt;
+<span class=SpellE><span class=GramE>GetSheets</span></span><span class=GramE>(</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetSheetName</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+style='color:blue'>string</span> name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>string</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>GetSheetName</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>FindSheet</span>(<span style='color:blue'>string</span>
+name);<span style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>NewEmptyWorkbook</span>();<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span class=SpellE><span lang=EN-US style='font-size:16.0pt;
+mso-ansi-language:EN-US'>C_AdvancedDataGrid</span></span><span lang=EN-US
+style='font-size:16.0pt;mso-ansi-language:EN-US'> class</span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>class</span> <span
+class=SpellE><span style='color:#2B91AF'>C_AdvancedDataGrid</span></span> : <span
+class=SpellE><span style='color:#2B91AF'>UserControl</span></span>, <span
+class=SpellE><span style='color:#2B91AF'>IDisposable</span></span>, <span
+class=SpellE><span style='color:#2B91AF'>IDataGrid</span></span><span
+style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Wrapper control for
+AdvancedDataGrid/<span class=SpellE>S_AdvancedDataGrid</span> controls.
+Switches between them at runtime, allowing <span class=GramE>to use</span>
+required control depending on Excel presence on the target machine.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Constructors:</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>C_AdvancedDataGrid</span>()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Creates <span class=SpellE>C_AdvancedDataGrid</span>
+control in substitute mode</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>C_AdvancedDataGrid</span>(<span
+class=SpellE><span style='color:#2B91AF'>GridMode</span></span> mode)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Creates <span class=SpellE>C_AdvancedDataGrid</span>
+control in specified mode</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Properties:</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:#2B91AF'>GridMode</span></span>
+Mode<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Gets or sets the current grid
+mode. Setting this property will cause control to be initialized again.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:#2B91AF'>IDataGrid</span></span>
+<span class=SpellE>BaseGrid</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Returns the underlying grid,
+which type is determined by Mode property <o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Methods:</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span>
+Initialize(<span class=SpellE><span style='color:#2B91AF'>GridMode</span></span>
+mode)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Initializes this control in
+specified mode</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span>
+Destroy()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Releases resources associated
+with this control instance.</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Members
+from <span class=SpellE>IDataGrid</span> interface:</span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>object</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DataSource</span> {<span
+class=SpellE><span style='color:blue'>get</span>;<span style='color:blue'>set</span></span>;}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>ActiveSheet</span> { <span style='color:blue'>get</span>; <span
+style='color:blue'>set</span>; }<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>SheetsCount</span> { <span style='color:blue'>get</span>; }<span
+style='color:blue'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>,
+<span style='color:blue'>object</span> <span class=SpellE>val</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>object</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>GetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>);<span
+style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetSheetContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:#2B91AF'>DataTable</span></span> t);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>DataTable</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span class=GramE>GetSheetContent</span></span><span
+class=GramE>(</span><span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE><span style='color:blue'>bool</span></span> <span
+class=SpellE>FirstRowHasHeaders</span>, <span class=SpellE><span
+style='color:blue'>int</span></span> <span class=SpellE>n_col</span> = 0, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>n_row</span>
+= 0);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>GetActiveSheet</span>();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetActiveSheet</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> index);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DeleteSheet</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> index);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>AddSheet</span>(<span
+style='color:blue'>string</span> name = <span style='color:#A31515'>&quot;&quot;</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#2B91AF;mso-ansi-language:EN-US'>List</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'>&lt;<span class=SpellE><span style='color:#2B91AF'>XlSheet</span></span>&gt;
+<span class=SpellE><span class=GramE>GetSheets</span></span><span class=GramE>(</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetSheetName</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+style='color:blue'>string</span> name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>string</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>GetSheetName</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>FindSheet</span>(<span style='color:blue'>string</span>
+name);<span style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>NewEmptyWorkbook</span>();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>See AdvancedDataGrid description
+for the information about the meaning of these methods.</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'>GridMode</span></span><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'> enumeration<o:p></o:p></span></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>enum</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE><span style='color:#2B91AF'>GridMode</span></span><span
+style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>Determines
+the behavior of <span class=SpellE>C_AdvancedDataGrid</span> control.</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Values:</span><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Undefined = 0, <span style='color:green'>//not
+initialized yet</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Auto = 1, <span style='color:green'>//Choose
+mode automatically: Excel mode if possible, otherwise Substitute</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Excel = 2, <span style='color:green'>//Uses
+AdvancedDataGrid</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'>Substitute =3 <span style='color:green'>//Uses
+<span class=SpellE>S_AdvancedDataGrid</span><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>namespace</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>ExtraControls.SubstituteGrid</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'>S_AdvancedDataGrid</span></span><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'> class<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>class</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:#2B91AF'>S_AdvancedDataGrid</span></span>
+: <span class=SpellE><span style='color:#2B91AF'>UserControl</span></span>, <span
+class=SpellE><span style='color:#2B91AF'>IDataGrid</span></span><span
+style='color:#2B91AF'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Provides an implementation of <span
+class=SpellE>IDataGrid</span> interface via standard Windows Forms control,
+allowing to display and edit one or</span><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:green;mso-ansi-language:EN-US'>more</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'> tables of data. Serves as <span
+class=GramE>a</span> Excel-free substitute for AdvancedDataGrid control.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Normally you should not use this
+class directly, use <span class=SpellE>C_AdvancedDataGrid</span> instead.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:16.0pt;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Constructors:</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>S_AdvancedDataGrid</span>()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Creates new <span class=SpellE>S_AdvancedDataGrid</span>
+control and fills it with default empty content<o:p></o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Properties:</span><span
+lang=EN-US style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span style='color:blue'>bool</span></span>
+<span class=SpellE>ReadOnly</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Specifies if user is allowed to
+edit data in this control<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Methods:</span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>public</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span style='color:blue'>void</span>
+Destroy()<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>Releases resources associated
+with this control instance.</span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>Members
+from <span class=SpellE>IDataGrid</span> interface:</span><span lang=EN-US
+style='mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>object</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DataSource</span> {<span
+class=SpellE><span style='color:blue'>get</span>;<span style='color:blue'>set</span></span>;}<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>ActiveSheet</span> { <span style='color:blue'>get</span>; <span
+style='color:blue'>set</span>; }<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>SheetsCount</span> { <span style='color:blue'>get</span>; }<span
+style='color:blue'><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>,
+<span style='color:blue'>object</span> <span class=SpellE>val</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>object</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>GetCellContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:blue'>int</span></span> row, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>col</span>);<span
+style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetSheetContent</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+class=SpellE><span style='color:#2B91AF'>DataTable</span></span> t);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:#2B91AF;mso-ansi-language:EN-US'>DataTable</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE><span class=GramE>GetSheetContent</span></span><span
+class=GramE>(</span><span class=SpellE><span style='color:blue'>int</span></span>
+sheet, <span class=SpellE><span style='color:blue'>bool</span></span> <span
+class=SpellE>FirstRowHasHeaders</span>, <span class=SpellE><span
+style='color:blue'>int</span></span> <span class=SpellE>n_col</span> = 0, <span
+class=SpellE><span style='color:blue'>int</span></span> <span class=SpellE>n_row</span>
+= 0);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>GetActiveSheet</span>();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetActiveSheet</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> index);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>DeleteSheet</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> index);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>AddSheet</span>(<span
+style='color:blue'>string</span> name = <span style='color:#A31515'>&quot;&quot;</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:#2B91AF;mso-ansi-language:EN-US'>List</span><span lang=EN-US
+style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:Consolas;
+mso-ansi-language:EN-US'>&lt;<span class=SpellE><span style='color:#2B91AF'>XlSheet</span></span>&gt;
+<span class=SpellE><span class=GramE>GetSheets</span></span><span class=GramE>(</span>);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>SetSheetName</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet, <span
+style='color:blue'>string</span> name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>string</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>GetSheetName</span>(<span
+class=SpellE><span style='color:blue'>int</span></span> sheet);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=SpellE><span class=GramE><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:
+EN-US'>int</span></span></span><span lang=EN-US style='font-size:9.5pt;
+font-family:Consolas;mso-bidi-font-family:Consolas;mso-ansi-language:EN-US'> <span
+class=SpellE>FindSheet</span>(<span style='color:blue'>string</span>
+name);<span style='mso-spacerun:yes'>        </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+class=GramE><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+mso-bidi-font-family:Consolas;color:blue;mso-ansi-language:EN-US'>void</span></span><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'> <span class=SpellE>NewEmptyWorkbook</span>();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><span
+lang=EN-US style='font-size:9.5pt;font-family:Consolas;mso-bidi-font-family:
+Consolas;color:green;mso-ansi-language:EN-US'>See AdvancedDataGrid description
+for the information about the meaning of these methods.</span><span lang=EN-US
+style='font-size:16.0pt;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

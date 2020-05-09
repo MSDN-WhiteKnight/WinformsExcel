@@ -1,0 +1,545 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WinFormsExcel</name>
+    </assembly>
+    <members>
+        <member name="T:ExtraControls.XlSheet">
+            <summary>
+            Represents data sheet in Excel Workbook
+            </summary>
+        </member>
+        <member name="T:ExtraControls.SubstituteGrid.S_AdvancedDataGrid">
+            <summary>
+            Provides an implementation of IDataGrid interface via standard Windows Forms control, allowing to display and edit one or
+            more tables of data. Serves as a Excel-free substitute for AdvancedDataGrid control.
+            </summary>
+        </member>
+        <member name="T:ExtraControls.IDataGrid">
+            <summary>
+            Provides a set of properties and methods shared by DataGrid controls able to display multiple data tables
+            </summary>
+        </member>
+        <member name="F:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.sheets">
+            <summary>
+            The collection of sheets displayed in this control
+            </summary>
+        </member>
+        <member name="F:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.active_sheet">
+            <summary>
+            Reference to the sheet currently displayed in the grid
+            </summary>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.button_Click(System.Object,System.EventArgs)">
+            <summary>
+            Event fired when user clicks a button associated with certain sheet
+            </summary>        
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.NewSheet(System.String)">
+            <summary>
+            Creates the new sheet and adds it to this data grid control
+            </summary>
+            <param name="name">Optional sheet name</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.ActivateSheet(ExtraControls.SubstituteGrid.S_DataSheet)">
+            <summary>
+            Displays specified sheet in the grid
+            </summary>
+            <param name="sh">Reference to sheet object</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.UpdateSheetName(System.Int32,System.String)">
+            <summary>
+            Chenges the name of specified sheet, adjusting UI
+            </summary>
+            <param name="i">internal sheet index</param>
+            <param name="name">new name</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.#ctor">
+            <summary>
+            Creates new S_AdvancedDataGrid control and fills it with default empty content
+            </summary>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.SetCellContent(System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+            Sets contents of the cell specified by sheet, row and column numbers into an object of any type
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="row">Row number</param>
+            <param name="col">Column number</param>
+            <param name="val">New cell value</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.GetCellContent(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the content of the cell specified by sheet, row and column numbers.
+            
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="row">Row number</param>
+            <param name="col">Column number</param>
+            <returns>Value of the specified cell</returns>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.SetSheetContent(System.Int32,System.Data.DataTable)">
+            <summary>
+            Fills the specified sheet with a content of given DataTable object
+                     
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="t">DataTable to fill sheet's content</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.GetSheetContent(System.Int32,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Loads content of specified sheet as DataTable object.        
+                   
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="FirstRowHasHeaders">Specifies that first row contains column headers (unused)</param>
+            <param name="n_col">Maximum number of columns to load (unused)</param>
+            <param name="n_row">Maximum number of rows to load (unused)</param>
+            <returns>DataTable object filled with sheet content</returns>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.GetActiveSheet">
+            <summary>
+            Gets the number of currently active sheet.
+            Returns -1 if excel is not initialized.
+            </summary>
+            <returns>Sheet number</returns>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.SetActiveSheet(System.Int32)">
+            <summary>
+            Activates specified sheet in this control instance
+                   
+            </summary>
+            <param name="index">Sheet number</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.DeleteSheet(System.Int32)">
+            <summary>
+            Removes specified sheet from workbook. 
+            Note: You can't remove all sheets. At least one sheet must be present in workbook all the time.
+                    
+            </summary>
+            <param name="index">Sheet number</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.AddSheet(System.String)">
+            <summary>
+            Adds new sheet into the workbook of this control instance
+                    
+            </summary>
+            <param name="name">Worksheet name (optional)</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.GetSheets">
+            <summary>
+            Gets names of all sheets in this control instance as a list of string objects.
+                   
+            </summary>
+            <returns>List of worksheet names</returns>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.SetSheetName(System.Int32,System.String)">
+            <summary>
+            Changes the name of specified sheet.
+                    
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="name">Sheet ne name</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.GetSheetName(System.Int32)">
+            <summary>
+            Gets the index of sheet with specified name. Returns -1 if the sheet is not found.
+                    
+            </summary>
+            <param name="name">Sheet name</param>
+            <returns>Sheet index or -1</returns>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.FindSheet(System.String)">
+            <summary>
+            Inserts the worksheet before or after the target worksheet in the workbook
+                     
+            </summary>
+            <param name="curr_index">Number of sheet to move</param>
+            <param name="new_index">Target sheet index</param>
+            <param name="before">Specifies that sheet must be placed before the target sheet</param>
+        </member>
+        <member name="F:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.components">
+            <summary> 
+            Требуется переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.InitializeComponent">
+            <summary> 
+            Обязательный метод для поддержки конструктора - не изменяйте 
+            содержимое данного метода при помощи редактора кода.
+            </summary>
+        </member>
+        <member name="P:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.ActiveSheet">
+            <summary>
+            Gets or sets current active sheet.                
+            </summary>
+        </member>
+        <member name="T:ExtraControls.AdvancedDataGrid">
+            <summary>
+            Provides the functionality of hosting MS Excel window in Windows Forms application in order to display and edit
+            one or several tables of data
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_CHILD">
+            <summary>
+            Window style: child window, has no titlebar or sizebox
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_POPUP">
+            <summary>
+            Window style: popup window
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_BORDER">
+            <summary>
+            Window style: has border
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_CAPTION">
+            <summary>
+            Window style:  WS_BORDER | WS_DLGFRAME
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_THICKFRAME">
+            <summary>
+            Window style:  frame allows to resize this window
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_SIZEBOX">
+            <summary>
+            Window style:  frame allows to resize this window
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.GWL_STYLE">
+            <summary>
+            The offset of style dword in window structure (passed to GetWindowLong or SetWindowLong)
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.components">
+            <summary> 
+            Требуется переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.InitializeComponent">
+            <summary> 
+            Обязательный метод для поддержки конструктора - не изменяйте 
+            содержимое данного метода при помощи редактора кода.
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.SetParent(System.IntPtr,System.IntPtr)">
+            <summary>
+            Changes hWnd's owner to NewParent window 
+            </summary>
+            <param name="hWnd">handle of the window to change owner</param>
+            <param name="NewParent">handle of the new owner window</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.SetWindowLong(System.IntPtr,System.Int32,System.UInt32)">
+            <summary>
+            Sets window property defined by dword's offset in window structure
+            </summary>
+            <param name="hWnd">hadle of the window to change property</param>
+            <param name="nIndex">property dword's offset in window structure</param>
+            <param name="dwNewLong">new dword value of the property</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.GetWindowLong(System.IntPtr,System.Int32)">
+            <summary>
+            Gets the value of the window property defined by dword's offset in window structure
+            </summary>
+            <param name="nIndex">property dword's offset in window structure</param>
+            <param name="dwNewLong">new dword value of the property</param>
+            <returns></returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.MoveWindow(System.IntPtr,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Adjusts window position and size based on coordinates, width and height values
+            </summary>
+            <param name="hWnd">handle of the window to adjust values</param>
+            <param name="x">X coordinate of window on the screen</param>
+            <param name="y">Y coordinate of window on the screen</param>
+            <param name="w">window's width</param>
+            <param name="h">window's height</param>
+            <param name="repaint">repaint window after adjusting</param>
+            <returns></returns>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid._Xl">
+            <summary>
+            Underlying Excel appplication of this control instance
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid._Initialized">
+            <summary>
+            Indicates that excel was loaded for this control instance
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.#ctor">
+            <summary>
+            Creates AdvacedDataGrid control in uninitialized state
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.InitializeExcel">
+            <summary>
+            Initializes Excel application and creates empty workbook for this control instance
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.Destroy">
+            <summary>
+            Cleans up resources of current AdvancedDataGrid control, breaking cross-process window relationships
+            and closing Excel application. The control will be in uninitialized state.
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.Finalize">
+            <summary>
+            Destroys this control instance
+            </summary>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.AdvancedDataGrid_Resize(System.Object,System.EventArgs)">
+            <summary>
+            Adjusts Excel window size to fit AdvancedDataGrid control's new size
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.SetCellContent(System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+            Sets contents of the cell specified by sheet, row and column numbers into an object of any type
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized)
+            ArgumentException (sheet number is incorrect);
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="row">Row number</param>
+            <param name="col">Column number</param>
+            <param name="val">New cell value</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.GetCellContent(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Gets the content of the cell specified by sheet, row and column numbers.
+            Returns null in case of incorrect arguments.
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="row">Row number</param>
+            <param name="col">Column number</param>
+            <returns>Value of the specified cell</returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.SetSheetContent(System.Int32,System.Data.DataTable)">
+            <summary>
+            Fills the specified sheet with a content of given DataTable object
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized)
+            ArgumentException (sheet number is incorrect); 
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="t">DataTable to fill sheet's content</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.GetSheetContent(System.Int32,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            Loads content of specified sheet as DataTable object. 
+            Tries to guess column types based on first cells (uses string as default type).
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized)
+            ArgumentException (passed arguments are incorrect);  
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="FirstRowHasHeaders">Specifies that first row contains column headers</param>
+            <param name="n_col">Maximum number of columns to load (0 - automatic)</param>
+            <param name="n_row">Maximum number of rows to load (0 - automatic)</param>
+            <returns>DataTable object filled with sheet content</returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.GetActiveSheet">
+            <summary>
+            Gets the number of currently active sheet.
+            Returns -1 if excel is not initialized.
+            </summary>
+            <returns>Sheet number</returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.SetActiveSheet(System.Int32)">
+            <summary>
+            Activates specified sheet in this control instance
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            ArgumentException (index is incorrect);
+            </summary>
+            <param name="index">Sheet number</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.DeleteSheet(System.Int32)">
+            <summary>
+            Removes specified sheet from workbook. 
+            Note: You can't remove all sheets. At least one sheet must be present in workbook all the time.
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            ArgumentException (index is incorrect);
+            </summary>
+            <param name="index">Sheet number</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.AddSheet(System.String)">
+            <summary>
+            Adds new sheet into the workbook of this control instance
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            </summary>
+            <param name="name">Worksheet name (optional)</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.GetSheets">
+            <summary>
+            Gets names of all sheets in this control instance as a list of string objects.
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            </summary>
+            <returns>List of worksheet names</returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.SetSheetName(System.Int32,System.String)">
+            <summary>
+            Changes the name of specified sheet.
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            ArgumentException (index is incorrect or name is not specified);
+            </summary>
+            <param name="sheet">Sheet number</param>
+            <param name="name">Sheet ne name</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.FindSheet(System.String)">
+            <summary>
+            Gets the index of sheet with specified name. Returns -1 if the sheet is not found.
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            ArgumentException (name is not specified); 
+            </summary>
+            <param name="name">Sheet name</param>
+            <returns>Sheet index or -1</returns>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.MoveSheet(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Inserts the worksheet before or after the target worksheet in the workbook
+            
+            Throws:
+            InvalidOperationException (Excel is not initialized);
+            ArgumentException (incorrect index); 
+            </summary>
+            <param name="curr_index">Number of sheet to move</param>
+            <param name="new_index">Target sheet index</param>
+            <param name="before">Specifies that sheet must be placed before the target sheet</param>
+        </member>
+        <member name="M:ExtraControls.AdvancedDataGrid.System#IDisposable#Dispose">
+            <summary>
+            Frees resources accociated with this control instance
+            </summary>
+        </member>
+        <member name="P:ExtraControls.AdvancedDataGrid.DataSource">
+            <summary>
+            Gets or sets the content of currently active Excel sheet via DataTable object        
+            </summary>
+        </member>
+        <member name="P:ExtraControls.AdvancedDataGrid.ActiveSheet">
+            <summary>
+            Gets or sets current active sheet.                
+            </summary>
+        </member>
+        <member name="P:ExtraControls.AdvancedDataGrid.XlApplication">
+            <summary>
+            Gets the underlying Excel Application object of this control instance (read-only)
+            </summary>
+        </member>
+        <member name="T:ExtraControls.C_AdvancedDataGrid">
+            <summary>
+            Wrapper control for AdvancedDataGrid/S_AdvancedDataGrid controls. Switches between them at runtime, allowing 
+            to use required control depending on Excel presence on target machine
+            </summary>
+        </member>
+        <member name="F:ExtraControls.C_AdvancedDataGrid.components">
+            <summary> 
+            Требуется переменная конструктора.
+            </summary>
+        </member>
+        <member name="M:ExtraControls.C_AdvancedDataGrid.Dispose(System.Boolean)">
+            <summary> 
+            Освободить все используемые ресурсы.
+            </summary>
+            <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        </member>
+        <member name="M:ExtraControls.C_AdvancedDataGrid.InitializeComponent">
+            <summary> 
+            Обязательный метод для поддержки конструктора - не изменяйте 
+            содержимое данного метода при помощи редактора кода.
+            </summary>
+        </member>
+        <member name="M:ExtraControls.C_AdvancedDataGrid.ErrorMessage(System.String)">
+            <summary>
+            Displays error message within this control
+            </summary>
+            <param name="s">Error description</param>
+        </member>
+        <member name="M:ExtraControls.C_AdvancedDataGrid.#ctor">
+            <summary>
+            Creates C_AdvancedDataGrid control in substitute mode
+            </summary>
+        </member>
+        <member name="M:ExtraControls.C_AdvancedDataGrid.#ctor(ExtraControls.GridMode)">
+            <summary>
+            Creates C_AdvancedDataGrid control in specified mode
+            </summary>
+        </member>
+        <member name="M:ExtraControls.C_AdvancedDataGrid.Initialize(ExtraControls.GridMode)">
+            <summary>
+            Initializes this control in specified mode
+            </summary>        
+        </member>
+        <member name="P:ExtraControls.C_AdvancedDataGrid.Mode">
+            <summary>
+            Gets or sets the current grid mode. Setting this property will cause control to be initialized again.
+            </summary>
+        </member>
+        <member name="P:ExtraControls.C_AdvancedDataGrid.BaseGrid">
+            <summary>
+            Returns the underlying grid, which type is determined by Mide property 
+            </summary>
+        </member>
+        <member name="T:ExtraControls.SubstituteGrid.S_DataSheet">
+            <summary>
+            Represents S_AdvancedDataGrid's data sheet. Infrastructure.
+            </summary>
+        </member>
+        <member name="F:ExtraControls.SubstituteGrid.S_DataSheet.name">
+            <summary>
+            Sheet name, displayed in associated button
+            </summary>
+        </member>
+        <member name="F:ExtraControls.SubstituteGrid.S_DataSheet.title_button">
+            <summary>
+            Button used to activated this sheet
+            </summary>
+        </member>
+        <member name="F:ExtraControls.SubstituteGrid.S_DataSheet.data">
+            <summary>
+            actual data object this sheet is bound to
+            </summary>
+        </member>
+        <member name="T:ExtraControls.ChartType">
+            <summary>
+            Represents Excel chart type
+            </summary>
+        </member>
+    </members>
+</doc>
