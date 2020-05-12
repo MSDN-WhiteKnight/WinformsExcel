@@ -1,4 +1,4 @@
-﻿/* WinForms Excel library 
+/* WinForms Excel library 
  * Copyright (c) 2020,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
  * License: BSD 3-Clause */
 using System;
@@ -257,7 +257,7 @@ namespace ExtraControls
 
                 try
                 {
-                    wb = _Xl.ActiveWorkbook;
+                    wb = this.GetWorkbook();
                     sh = wb.Sheets;
 
                     int c = sh.Count;
@@ -314,13 +314,20 @@ namespace ExtraControls
 
                 IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
                 _Xl.Visible = true;//окно видимо
-                SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
+
                 
+
+                SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
 
                 uint style1 = GetWindowLong(wnd, GWL_STYLE);//получим стиль окна
                 uint style2 = style1 & (~WS_CAPTION);//уберем заголовок
                 style2 = style2 & (~WS_SIZEBOX);//уберем возможность изменения размера
+
+                /*style2 = style2 & (WS_CHILD);
+                style2 = style2 & (~WS_POPUP);*/
+
                 SetWindowLong(wnd, GWL_STYLE, (style2));//установка нового стиля
+                
                 MoveWindow((IntPtr)(_Xl.Hwnd), 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);//установка размеров окна
 
                 this._Initialized = true;//Excel загружен!
@@ -362,11 +369,15 @@ namespace ExtraControls
                     _Xl.DisplayAlerts = true;
                     _Xl.DisplayStatusBar = true;
                     _Xl.WindowState = Excel.XlWindowState.xlMaximized;
-                    _Xl.Visible = false;                 
+                    _Xl.Visible = false;
 
-                    Excel.Workbook wb = _Xl.ActiveWorkbook;
-                    wb.Close(false, Type.Missing, Type.Missing);//закрытие книги
-                    Marshal.ReleaseComObject(wb);
+                    Excel.Workbook wb = this.GetWorkbook();
+
+                    if (wb != null)
+                    {
+                        wb.Close(false, Type.Missing, Type.Missing);//закрытие книги
+                        Marshal.ReleaseComObject(wb);
+                    }
                 }
                 catch (Exception) { }
 
@@ -384,7 +395,11 @@ namespace ExtraControls
             {
                 foreach (string s in tmp_file_names)
                 {
-                    System.IO.File.Delete(s);
+                    try
+                    {
+                        System.IO.File.Delete(s);
+                    }
+                    catch (System.IO.IOException) { }
                 }
                 tmp_file_names.Clear();
             }
@@ -414,7 +429,30 @@ namespace ExtraControls
             {
                 MoveWindow((IntPtr)(_Xl.Hwnd), 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);
             }
-            catch (Exception) { }            
+            catch (Exception) { }
+        }
+
+        Excel.Workbook GetWorkbook()
+        {
+            Excel.Workbooks wbs = null;
+            Excel.Workbook wb = null;
+
+            try
+            {
+                wb = _Xl.ActiveWorkbook;
+
+                if (wb == null)
+                {
+                    wbs = _Xl.Workbooks;
+                    wb = wbs[1];
+                }
+            }
+            finally
+            {
+                if (wbs != null) Marshal.ReleaseComObject(wbs);
+            }
+
+            return wb;
         }
 
         #region Data Access
@@ -437,23 +475,25 @@ namespace ExtraControls
             if (col < 0) return;
 
             bool pr = false;
+            Excel.Workbooks wbs = null;
             Excel.Workbook wb = null;
             Excel.Worksheet sh = null;
             object obj = null;
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
+
                 obj=wb.Sheets[sheet];//получение листа
                 if (obj is Excel.Worksheet)
                 {
                     sh = (Excel.Worksheet)obj;
 
-                    if (sh.ProtectContents)
+                    /*if (sh.ProtectContents)
                     {
                         sh.Protect(Contents: false);
                         pr = true;
-                    }
+                    }*/
 
                     sh.Cells[row, col] = val;//установка значения
 
@@ -469,6 +509,7 @@ namespace ExtraControls
                 if (wb != null) Marshal.ReleaseComObject(wb);
                 if(sh!=null) Marshal.ReleaseComObject(sh);
                 if (obj != null) Marshal.ReleaseComObject(obj);
+                if (wbs != null) Marshal.ReleaseComObject(wbs);
             }
             
         }
@@ -496,7 +537,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
 
                 obj=wb.Sheets[sheet];//получение листа
                 if (obj is Excel.Worksheet)
@@ -537,7 +578,8 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+
+                wb = this.GetWorkbook();
 
                 obj = wb.Sheets[sheet];//получение листа
                 if (obj is Excel.Worksheet)
@@ -585,7 +627,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
 
                 obj = wb.Sheets[sheet];//получение листа
 
@@ -593,20 +635,23 @@ namespace ExtraControls
                 {
                     sh = (Excel.Worksheet)obj;
 
+                    //TODO: Worksheet.ProtectContents creates issues in Excel 2016!
 
-                    if (sh.ProtectContents)
+                    /*if (sh.ProtectContents)
                     {
                         sh.Protect(Contents: false);
                         pr = true;
-                    }
+                    }*/
 
 
                     int i, j;
 
+                    //TODO: Setting sheet name creates issues in Excel 2016!
+
                     //attempting to set sheet name
                     if (t.TableName.Trim() != "")
                     {
-                        try { sh.Name = t.TableName; }
+                        try { /*sh.Name = t.TableName;*/ }
                         catch (Exception) { }
                     }
 
@@ -667,7 +712,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 obj=wb.Sheets[sheet];//получение листа
                 if (obj is Excel.Worksheet)
                 {
@@ -822,7 +867,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 obj = wb.ActiveSheet;
                 if (obj is Excel.Worksheet)
                 {
@@ -867,7 +912,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 
                 sh = wb.Sheets;
                 obj = sh[index];
@@ -916,7 +961,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
 
                 obj = sh[index];
@@ -952,6 +997,8 @@ namespace ExtraControls
         /// <param name="name">Worksheet name (optional)</param>
         public void AddSheet(string name="")
         {
+            //TODO: Adding or activating sheets creates issues in Excel 2016!
+
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
 
             Excel.Workbook wb = null;
@@ -960,7 +1007,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Worksheets;
 
                 int c = sh.Count;
@@ -995,7 +1042,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
                 
                 int c = sh.Count;
@@ -1063,7 +1110,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
 
                 obj = sh[sheet];
@@ -1103,7 +1150,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
 
                 obj = sh[sheet];
@@ -1155,7 +1202,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
 
                 foreach (object o in sh)
@@ -1222,7 +1269,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
 
                 obj = sh[curr_index];
@@ -1271,7 +1318,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 wb.SaveAs(tmpfile);
                 this.tmp_file_names.Add(tmpfile);
 
@@ -1299,9 +1346,14 @@ namespace ExtraControls
             try
             {
                 wbs = _Xl.Workbooks;
-                wb = _Xl.ActiveWorkbook;
-                wb.Close(false);                
-                Marshal.ReleaseComObject(wb);
+                wb = this.GetWorkbook();
+
+                if (wb != null)
+                {
+                    wb.Close(false);
+                    Marshal.ReleaseComObject(wb);
+                }
+
                 wb = null;
                 wb = wbs.Add(Type.Missing);
             }
@@ -1324,7 +1376,7 @@ namespace ExtraControls
             try
             {
                 wbs = _Xl.Workbooks;
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 
                 wb.Close(false);
                 Marshal.ReleaseComObject(wb);
@@ -1350,7 +1402,7 @@ namespace ExtraControls
 
             try
             {
-                wb = _Xl.ActiveWorkbook;
+                wb = this.GetWorkbook();
                 sh = wb.Sheets;
                 wsh = sh[sheet];
 
