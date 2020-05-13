@@ -1,4 +1,4 @@
-﻿/* WinForms Excel library 
+/* WinForms Excel library 
  * Copyright (c) 2020,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
  * License: BSD 3-Clause */
 using System;
@@ -18,19 +18,19 @@ namespace WinFormsExcelDemo
         public Form1()
         {
             InitializeComponent();
-            advancedDataGrid1.InitializeExcel();//load resources accosiated with this control
-            advancedDataGrid1.DisplayFormulaBar = cbFormulaBar.Checked;
-            advancedDataGrid1.DisplayStatusBar = cbStatusBar.Checked;
+            
         }
 
         private void bOpenFile_Click(object sender, EventArgs e)
         {
+            
+
             OpenFileDialog ofn = new OpenFileDialog();
             if (ofn.ShowDialog(this) != DialogResult.Cancel)
             {
                 try
                 {
-                    advancedDataGrid1.OpenFile(ofn.FileName);//load excel file
+                    advancedDataGrid1.SourceFile = ofn.FileName;//load excel file
                 }
                 catch (Exception ex)
                 {
@@ -38,6 +38,14 @@ namespace WinFormsExcelDemo
                         "Error while opening file");
                 }
 
+                advancedDataGrid1.DisplayFormulaBar = cbFormulaBar.Checked;
+                advancedDataGrid1.DisplayStatusBar = cbStatusBar.Checked;
+                advancedDataGrid1.InitializeExcel();//load resources accosiated with this control
+
+                this.bGenerate.Enabled = false;
+                this.bOpenFile.Enabled = false;
+                this.cbFormulaBar.Enabled = false;
+                this.cbStatusBar.Enabled = false;
             }
         }
 
@@ -61,6 +69,15 @@ namespace WinFormsExcelDemo
 
         private void bGenerate_Click(object sender, EventArgs e)
         {
+            advancedDataGrid1.DisplayFormulaBar = cbFormulaBar.Checked;
+            advancedDataGrid1.DisplayStatusBar = cbStatusBar.Checked;
+            advancedDataGrid1.InitializeExcel();//load resources accosiated with this control
+
+            this.bGenerate.Enabled = false;
+            this.bOpenFile.Enabled = false;
+            this.cbFormulaBar.Enabled = false;
+            this.cbStatusBar.Enabled = false;
+
             /*Generates table and graph for the function specified by user*/                       
             float dx = 0.1f;//argument interval
             float x_min = 0.0f, x_max = 0.0f;//argument bounds
@@ -108,13 +125,10 @@ namespace WinFormsExcelDemo
                 nrow++;//increment Excel row
             }
 
-            
-
-            advancedDataGrid1.NewEmptyWorkbook();//clear the workbook
-
             advancedDataGrid1.SetSheetContent(1, dt);//display table in Excel
 
-            advancedDataGrid1.AddChart(1, "A1", "B" + nrow.ToString());//add diagram
+            advancedDataGrid1.AddEmbeddedChart(1, "A1", "B" + nrow.ToString(),100,10,350,350);//add diagram
+            advancedDataGrid1.Focus();
 
         }
 
