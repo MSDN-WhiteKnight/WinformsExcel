@@ -21,7 +21,7 @@ namespace MyExcel
         public Form1()
         {
             InitializeComponent();
-            advancedDataGrid1.Initialize(GridMode.Auto);
+            advancedDataGrid1.InitializeExcel();
 
             //advancedDataGrid1.OpenFile("e:\\coal_x10.xls");
 
@@ -48,12 +48,12 @@ namespace MyExcel
             advancedDataGrid1.DataSource = t;
 
             //display diagram in the workbook
-            if (advancedDataGrid1.Mode == GridMode.Excel)
-            {
-                AdvancedDataGrid grid = advancedDataGrid1.BaseGrid as AdvancedDataGrid;
-                grid.AddChart(1, grid.GetCellAddress(1, 1, 1),
-                    grid.GetCellAddress(1, 20, 2), ChartType.xlXYScatterLines, "sin(x)");
-            }
+
+            advancedDataGrid1.AddChart(1, 
+                advancedDataGrid1.GetCellAddress(1, 1, 1),
+                advancedDataGrid1.GetCellAddress(1, 20, 2),  
+                ChartType.xlXYScatterLines, "sin(x)");
+            
             
 
             //add one more sheet to the workbook            
@@ -80,13 +80,8 @@ namespace MyExcel
             MessageBox.Show(advancedDataGrid1.GetCellContent(4,3,3).ToString());            
 
             //save workbook into file
-            if (advancedDataGrid1.Mode == GridMode.Excel)
-            {
-                AdvancedDataGrid grid = advancedDataGrid1.BaseGrid as AdvancedDataGrid;
-                grid.SaveIntoFile("c:\\file.xls");
-            }
+            advancedDataGrid1.SaveIntoFile("c:\\Test\\file.xls");
             
-
             List<XlSheet> list = advancedDataGrid1.GetSheets();
             string s = "";
             foreach (XlSheet sh in list)
