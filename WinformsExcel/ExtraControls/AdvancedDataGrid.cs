@@ -33,6 +33,12 @@ namespace ExtraControls
         [DllImport("user32.dll")]
         public static extern int SetParent(IntPtr hWnd, IntPtr NewParent);
 
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        const int SW_HIDE = 0;
+        const int SW_SHOW = 5;
+
         /// <summary>
         /// Sets window property defined by dword's offset in window structure
         /// </summary>
@@ -108,6 +114,8 @@ namespace ExtraControls
         /// Underlying Excel appplication of this control instance
         /// </summary>
         protected Excel.Application _Xl=null;//приложение Excel
+        int _ver;
+        bool _editmode = false;
 
         /// <summary>
         /// Indicates that excel was loaded for this control instance
@@ -181,6 +189,13 @@ namespace ExtraControls
             {
                 if (this._Initialized)
                 {
+                    if (this._ver >= VersionExcel2016)
+                    {
+                        throw new NotSupportedException(
+                            "Modifying this property after the grid is initialized is not supported in Excel 2016+"
+                            );
+                    }
+
                     _Xl.DisplayStatusBar = value;
                 }
                 this.display_status_bar = value;
@@ -198,6 +213,13 @@ namespace ExtraControls
             {
                 if (this._Initialized)
                 {
+                    if (this._ver >= VersionExcel2016)
+                    {
+                        throw new NotSupportedException(
+                            "Modifying this property after the grid is initialized is not supported in Excel 2016+"
+                            );
+                    }
+
                     _Xl.DisplayFormulaBar = value;
                 }
                 this.display_formula_bar = value;
@@ -277,6 +299,14 @@ namespace ExtraControls
             }
         }
 
+        [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),        
+        Description("Specifies the initial count of sheets in the workbook"), DefaultValue(1)]
+        public int InitialSheetsCount { get; set; }
+
+        [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),
+        Description("Specifies workbook file to open when initializing this control "), 
+        DefaultValue("")]
+        public string SourceFile { get; set; }
 
         #endregion
 
@@ -287,8 +317,48 @@ namespace ExtraControls
         {
             InitializeComponent();
 
-            this._Initialized = false;          
+            this._Initialized = false;
+            this.InitialSheetsCount = 1;
+            this.SourceFile = "";
+        }
+
+        void EmbedExcel()
+        {
+            IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
+            SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
             
+            uint style1 = GetWindowLong(wnd, GWL_STYLE);//получим стиль окна
+            uint style2 = style1 & (~WS_CAPTION);//уберем заголовок
+            style2 = style2 & (~WS_SIZEBOX);//уберем возможность изменения размера
+
+            SetWindowLong(wnd, GWL_STYLE, (style2));//установка нового стиля
+            MoveWindow(wnd, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);//установка размеров окна
+        }
+
+        void UnembedExcel()
+        {
+            IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
+            SetParent(wnd, IntPtr.Zero);            
+            _Xl.WindowState = Excel.XlWindowState.xlMaximized;
+            _Xl.DisplayExcel4Menus = false;
+        }
+
+        void EnterEditMode()
+        {
+            if (this._editmode) return;
+
+            if(this._ver>=VersionExcel2016)this.UnembedExcel();
+
+            this._editmode = true;
+        }
+
+        void LeaveEditMode()
+        {
+            if (this._editmode == false) return;
+
+            if (this._ver >= VersionExcel2016) this.EmbedExcel();
+
+            this._editmode = false;
         }
 
         /// <summary>
@@ -296,39 +366,40 @@ namespace ExtraControls
         /// </summary>
         public void InitializeExcel()//загрузка Excel
         {
-            _Xl = new Excel.Application();//запуск приложения            
-            _Xl.WindowState = Excel.XlWindowState.xlMinimized;
-
-            var book = _Xl.Workbooks.Add(Type.Missing);//создание новой пустой книги
-            Marshal.ReleaseComObject(book);
+            Excel.Workbooks wbs = null;
+            Excel.Workbook book = null;
+            Excel.Sheets sheets = null;
 
             try
             {
-                
+                _Xl = new Excel.Application();//запуск приложения
+                this._ver = this.GetExcelVersion();
+
+                _Xl.WindowState = Excel.XlWindowState.xlMinimized;
                 _Xl.DisplayExcel4Menus = false;//выключить меню
                 _Xl.DisplayFormulaBar = display_formula_bar;//выключить строку формул
                 _Xl.ShowWindowsInTaskbar = false;//не показывать в панели задач
                 _Xl.DisplayAlerts = false;//не показывать сообщения
                 _Xl.DisplayStatusBar = display_status_bar;//не показывать строку состояния   
                 _Xl.Interactive = !disabled;
-
-                IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
                 _Xl.Visible = true;//окно видимо
-
                 
+                wbs = _Xl.Workbooks;
 
-                SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
+                if (this.SourceFile == String.Empty)
+                {
+                    book = wbs.Add(Type.Missing);//создание новой пустой книги
+                    sheets = book.Sheets;
 
-                uint style1 = GetWindowLong(wnd, GWL_STYLE);//получим стиль окна
-                uint style2 = style1 & (~WS_CAPTION);//уберем заголовок
-                style2 = style2 & (~WS_SIZEBOX);//уберем возможность изменения размера
+                    while (true)
+                    {
+                        if (sheets.Count >= this.InitialSheetsCount) break;
+                        sheets.Add();
+                    }
+                }
+                else book = wbs.Open(Filename: this.SourceFile);   
 
-                /*style2 = style2 & (WS_CHILD);
-                style2 = style2 & (~WS_POPUP);*/
-
-                SetWindowLong(wnd, GWL_STYLE, (style2));//установка нового стиля
-                
-                MoveWindow((IntPtr)(_Xl.Hwnd), 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);//установка размеров окна
+                EmbedExcel();
 
                 this._Initialized = true;//Excel загружен!
             }
@@ -341,6 +412,12 @@ namespace ExtraControls
                     this._Initialized = false;
                     _Xl = null;
                 }
+            }
+            finally
+            {
+                if(book!=null)Marshal.ReleaseComObject(book);
+                if (wbs != null) Marshal.ReleaseComObject(wbs);
+                if (sheets != null) Marshal.ReleaseComObject(sheets);
             }
         }
 
@@ -444,6 +521,9 @@ namespace ExtraControls
                 if (wb == null)
                 {
                     wbs = _Xl.Workbooks;
+
+                    if (wbs.Count == 0) return null;
+
                     wb = wbs[1];
                 }
             }
@@ -453,6 +533,21 @@ namespace ExtraControls
             }
 
             return wb;
+        }
+
+        const int VersionExcel2013 = 15;
+        const int VersionExcel2016 = 16;
+
+        int GetExcelVersion()
+        {
+            int res;
+            string s = _Xl.Version.Trim();
+            string[] arr = s.Split(new char[]{'.'},StringSplitOptions.RemoveEmptyEntries);
+
+            if (arr.Length == 0) return -1;
+                        
+            if (Int32.TryParse(arr[0], out res)) return res;
+            else return -1;
         }
 
         #region Data Access
@@ -489,11 +584,14 @@ namespace ExtraControls
                 {
                     sh = (Excel.Worksheet)obj;
 
-                    /*if (sh.ProtectContents)
+                    if (this._ver < 16)
                     {
-                        sh.Protect(Contents: false);
-                        pr = true;
-                    }*/
+                        if (sh.ProtectContents)
+                        {
+                            sh.Protect(Contents: false);
+                            pr = true;
+                        }
+                    }
 
                     sh.Cells[row, col] = val;//установка значения
 
@@ -634,25 +732,26 @@ namespace ExtraControls
                 if (obj is Excel.Worksheet)
                 {
                     sh = (Excel.Worksheet)obj;
-
-                    //TODO: Worksheet.ProtectContents creates issues in Excel 2016!
-
-                    /*if (sh.ProtectContents)
+                    
+                    if (this._ver < 16)
                     {
-                        sh.Protect(Contents: false);
-                        pr = true;
-                    }*/
-
-
+                        if (sh.ProtectContents)
+                        {
+                            sh.Protect(Contents: false);
+                            pr = true;
+                        }
+                    }
+                    
                     int i, j;
-
-                    //TODO: Setting sheet name creates issues in Excel 2016!
-
+                                        
                     //attempting to set sheet name
-                    if (t.TableName.Trim() != "")
+                    if (this._ver < 16)
                     {
-                        try { /*sh.Name = t.TableName;*/ }
-                        catch (Exception) { }
+                        if (t.TableName.Trim() != "")
+                        {
+                            try { sh.Name = t.TableName; }
+                            catch (Exception) { }
+                        }
                     }
 
                     //filling column names
@@ -904,6 +1003,7 @@ namespace ExtraControls
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
             if (index <= 0) throw new ArgumentException("index must be positive");
 
+            EnterEditMode();
             Excel.Workbook wb = null;
             Excel.Sheets sh = null;
             Excel.Worksheet wsh = null;
@@ -935,6 +1035,7 @@ namespace ExtraControls
                 if (wsh != null) Marshal.ReleaseComObject(wsh);
                 if (obj != null) Marshal.ReleaseComObject(obj);
                 if (ch != null) Marshal.ReleaseComObject(ch);
+                LeaveEditMode();
             }
             
         }
@@ -951,6 +1052,7 @@ namespace ExtraControls
         public void DeleteSheet(int index)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
             if (index <= 0) throw new ArgumentException("index must be positive");
 
             Excel.Workbook wb = null;
@@ -996,11 +1098,10 @@ namespace ExtraControls
         /// </summary>
         /// <param name="name">Worksheet name (optional)</param>
         public void AddSheet(string name="")
-        {
-            //TODO: Adding or activating sheets creates issues in Excel 2016!
-
+        {       
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
-
+            if (this._ver >= VersionExcel2016) throw new NotSupportedException("This API is not supported in Excel 2016+");
+            
             Excel.Workbook wb = null;
             Excel.Sheets sh = null;
             Excel.Worksheet wsh = null;
@@ -1098,10 +1199,11 @@ namespace ExtraControls
         public void SetSheetName(int sheet,string name)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
             if (sheet <= 0) throw new ArgumentException("index must be positive");
             if (name== null) throw new ArgumentException("name can't be null");
             if (name.Trim().Length <= 0) throw new ArgumentException("name can't be omitted");
-
+            
             Excel.Workbook wb = null;
             Excel.Sheets sh = null;
             Excel.Worksheet wsh = null;
@@ -1257,6 +1359,7 @@ namespace ExtraControls
         public void MoveSheet(int curr_index, int new_index,bool before=true)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
             if (curr_index <= 0) throw new ArgumentException("index must be positive");
             if (new_index <= 0) throw new ArgumentException("index must be positive");
 
@@ -1309,6 +1412,7 @@ namespace ExtraControls
         public void SaveIntoFile(string file)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            
             Excel.Workbook wb = null;
 
             string tmpfile = System.IO.Path.GetTempFileName();
@@ -1318,6 +1422,7 @@ namespace ExtraControls
 
             try
             {
+                EnterEditMode();
                 wb = this.GetWorkbook();
                 wb.SaveAs(tmpfile);
                 this.tmp_file_names.Add(tmpfile);
@@ -1333,6 +1438,7 @@ namespace ExtraControls
             finally
             {
                 if(wb!=null)Marshal.ReleaseComObject(wb);
+                LeaveEditMode();
             }
 
         }
@@ -1340,6 +1446,8 @@ namespace ExtraControls
         public void NewEmptyWorkbook()
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
+            
             Excel.Workbooks wbs = null;
             Excel.Workbook wb = null;
 
@@ -1368,8 +1476,9 @@ namespace ExtraControls
         public void OpenFile(string file)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
             if (System.IO.File.Exists(file) == false) throw new System.IO.FileNotFoundException("File "+file+" not found", file);
-
+            
             Excel.Workbooks wbs = null;
             Excel.Workbook wb = null;
 
@@ -1390,15 +1499,20 @@ namespace ExtraControls
             }
         }
 
-        public void AddChart(int sheet, string cell1, string cell2, ChartType ct = ChartType.xlXYScatterLines,string title = "" )
+        void AddChartImpl(bool embedded,
+            int sheet, string cell1, string cell2,
+            double x, double y, double w, double h,
+            ChartType ct = ChartType.xlXYScatterLines,
+            string title = "")
         {
-            if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
             Excel.Workbook wb = null;
             Excel.Sheets sh = null;
             Excel.Worksheet wsh = null;
             Excel.Chart ch = null;
             Excel.Range r = null;
             Excel.ChartTitle t = null;
+            Excel.ChartObject co = null;
+            Excel.ChartObjects cobjs = null;
 
             try
             {
@@ -1406,14 +1520,22 @@ namespace ExtraControls
                 sh = wb.Sheets;
                 wsh = sh[sheet];
 
-                ch = wb.Charts.Add(After: wsh);
+                if (embedded)
+                {
+                    cobjs = wsh.ChartObjects();
+                    co = cobjs.Add(x, y, w, h);
+                    ch = co.Chart;
+                }
+                else
+                {
+                    ch = wb.Charts.Add(After: wsh);
+                }
+
                 r = wsh.Range[cell1, cell2];
-                
+
                 ch.ChartType = (Excel.XlChartType)ct;
                 ch.SetSourceData(r, Excel.XlRowCol.xlColumns);
-                
-                
-                
+
                 ch.HasLegend = false;
                 ch.SizeWithWindow = true;
 
@@ -1432,7 +1554,29 @@ namespace ExtraControls
                 if (ch != null) Marshal.ReleaseComObject(ch);
                 if (r != null) Marshal.ReleaseComObject(r);
                 if (t != null) Marshal.ReleaseComObject(t);
+                if (co != null) Marshal.ReleaseComObject(co);
+                if (cobjs != null) Marshal.ReleaseComObject(cobjs);
             }
+        }
+
+        public void AddChart(int sheet, string cell1, string cell2, ChartType ct = ChartType.xlXYScatterLines,string title = "" )
+        {
+            if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+            if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
+
+            this.AddChartImpl(false, sheet, cell1, cell2, 0, 0, 0, 0, ct, title);
+        }
+
+        public void AddEmbeddedChart(
+            int sheet, string cell1, string cell2,
+            double x, double y, double w, double h,
+            ChartType ct = ChartType.xlXYScatterLines,
+            string title = ""
+            )
+        {
+            if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
+
+            this.AddChartImpl(true, sheet, cell1, cell2, x, y, w, h, ct, title);
         }
 
 
