@@ -743,7 +743,7 @@ namespace ExtraControls
                     }
                     
                     int i, j;
-                                        
+                    
                     //attempting to set sheet name
                     if (this._ver < 16)
                     {
@@ -1098,7 +1098,7 @@ namespace ExtraControls
         /// </summary>
         /// <param name="name">Worksheet name (optional)</param>
         public void AddSheet(string name="")
-        {       
+        {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
             if (this._ver >= VersionExcel2016) throw new NotSupportedException("This API is not supported in Excel 2016+");
             
