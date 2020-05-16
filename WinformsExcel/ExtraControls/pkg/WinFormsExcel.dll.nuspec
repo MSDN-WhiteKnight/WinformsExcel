@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>WinFormsExcel</id>
+    <version>1.0.0</version>
+    <authors>MSDN-WhiteKnight</authors>
+    <owners>MSDN-WhiteKnight</owners>
+    <title>WinFormsExcel</title>
+    <licenseUrl>https://github.com/MSDN-WhiteKnight/WinformsExcel/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/MSDN-WhiteKnight/WinformsExcel</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Library that allows to host MS Excel interface in Windows Forms application as a user control</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright (c) 2020, MSDN.WhiteKnight</copyright>
+    <tags>dotnet winforms controls excel</tags>
+    <dependencies>      
+    </dependencies>    
+  </metadata>
+<files>
+        <file src="lib\net40\*" target="lib/net40/" />
+        <file src="readMe.txt" target="" />
+</files>
+</package>

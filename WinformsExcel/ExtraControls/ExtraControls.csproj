@@ -84,6 +84,7 @@
     <Content Include="changes.txt" />
     <Content Include="Interop.Excel.dll" />
     <Content Include="Interop.Microsoft.Office.Core.dll" />
+    <Content Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdvancedDataGrid.resx">
@@ -96,7 +97,14 @@
       <DependentUpon>S_AdvancedDataGrid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="pkg\package.cmd" />
+    <None Include="pkg\WinFormsExcel.dll.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent Condition=" '$(Configuration)' == 'Release' ">$(ProjectDir)\pkg\package.cmd</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
