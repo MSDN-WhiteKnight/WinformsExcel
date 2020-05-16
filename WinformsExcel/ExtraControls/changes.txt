@@ -1,11 +1,23 @@
 ﻿1.1 
-(05.12.2016)
 - Fixed bug when saved file was not accessible until application is closed after using SaveIntoFile method
 - New control S_AdvancedDataGrid - substitutes the functionality of AdvancedDataGrid control with some combination of standard controls
 - New types: S_DataSheet, IDataGrid
-(15.12.2016)
 - New control C_AdvancedDataGrid - wrapper control for AdvancedDataGrid, allowing make application compatible with no-Excel machines
 - New type: GridMode enumeration
 - S_AdvancedDataGrid: added property - ReadOnly
 - AdvancedDataGrid: added property - Inactive
 
+1.2
+- Fix null reference when trying to access active workbook
+- Fix exceptions when trying to delete temp file
+- Disable code that accesses Worksheet.ProtectContents in Excel 2016+
+- Disable APIs that add, remove or rename worksheets and open files in Excel 2016+ due to UI freezes (DisplayStatusBar, DisplayFormulaBar properties - can't be set after Excel is initialized; DeleteSheet, AddSheet, SetSheetName, MoveSheet, NewEmptyWorkbook, OpenFile, AddChart methods now throw NotSupportedException)
+- Fix SetActiveSheet and SaveIntoFile in Excel 2016+
+- Add new properties InitialSheetCount and SourceFile that can be set only before Excel is initialized
+- Add new method AddEmbeddedChart
+
+Excel 2016+ limitations: 
+* You cannot add or remove sheets after InitializeExcel is called, but you can set InitialSheetCount before initialization to control sheet count.
+* You cannot open workbook files after InitializeExcel is called, but you can set SourceFile property before initialization to select workbook to open. If this property is empty string, control will be created with new empty workbook
+* You cannot add charts to new sheets, but you can add charts embedded to existing sheet with AddEmbeddedChart method
+* You cannot modify content of protected sheets (on older Excel versions library attempts to unprotect sheet)
