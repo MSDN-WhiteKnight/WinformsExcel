@@ -1,2 +1,4 @@
 # Binary files
 *.dll
+*.pdb
+
