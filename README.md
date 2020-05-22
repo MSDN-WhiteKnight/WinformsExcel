@@ -22,3 +22,7 @@ WinForms Excel Library allows to host MS Excel interface in Windows Forms applic
 - Direct access to Excel interoperability interfaces via Application object.
 
 The library distribution package contains demo application project (Visual Studio 2010)
+
+## Errors
+
+*System.Runtime.InteropServices.COMException (HRESULT 0x800A03EC) when trying to set cell content.* This error happens when you try to programmatically set the content of the cell that user is currently editing (i.e., when user double clicked the cell and Excel entered edit mode on it, which displays input caret inside cell and enables user to type text). The only current workaround is to catch exception an ask user to exit from edit more by single-clicking on some other cell.
