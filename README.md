@@ -1,5 +1,7 @@
 # WinForms Excel Library (.NET Component) 
 
+[![Nuget](https://img.shields.io/nuget/v/WinFormsExcel)](https://www.nuget.org/packages/WinFormsExcel/)
+
 **License:** [BSD 3-Clause](LICENSE)
 
 ## Requirements
