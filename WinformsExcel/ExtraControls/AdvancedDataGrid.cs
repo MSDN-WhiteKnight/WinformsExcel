@@ -102,6 +102,8 @@ namespace ExtraControls
         /// </summary>
         const uint WS_SIZEBOX = WS_THICKFRAME;
 
+        const uint WS_SYSMENU = 0x00080000;
+
         /// <summary>
         /// The offset of style dword in window structure (passed to GetWindowLong or SetWindowLong)
         /// </summary>
@@ -124,6 +126,7 @@ namespace ExtraControls
 
         protected bool display_formula_bar = false;
         protected bool display_status_bar = false;
+        protected bool display_window_title = false;
         protected bool disabled=false;
 
         protected List<string> tmp_file_names = new List<string>(10);
@@ -227,6 +230,28 @@ namespace ExtraControls
 
         }
 
+        [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),
+        Category("Appearance"),
+        Description("Enables Excel window title, including ribbon manu in new versions"), DefaultValue(false)]
+        public bool DisplayWindowTitle
+        {
+            get { return this.display_window_title; }
+            set
+            {
+                if (this._Initialized)
+                {
+                    if (this._ver >= VersionExcel2016)
+                    {
+                        throw new NotSupportedException(
+                            "Modifying this property after the grid is initialized is not supported in Excel 2016+"
+                            );
+                    }
+                }
+
+                this.display_window_title = value;
+            }
+        }
+
         /// <summary>
         /// Gets or sets current active sheet.                
         /// </summary>
@@ -326,12 +351,17 @@ namespace ExtraControls
         {
             IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
             SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
-            
-            uint style1 = GetWindowLong(wnd, GWL_STYLE);//получим стиль окна
-            uint style2 = style1 & (~WS_CAPTION);//уберем заголовок
-            style2 = style2 & (~WS_SIZEBOX);//уберем возможность изменения размера
 
-            SetWindowLong(wnd, GWL_STYLE, (style2));//установка нового стиля
+            uint style = GetWindowLong(wnd, GWL_STYLE);//получим стиль окна
+            style &= ~WS_SIZEBOX;//уберем возможность изменения размера
+
+            if (!this.display_window_title)
+            {
+                style &= ~WS_CAPTION;//уберем заголовок
+            }
+
+            SetWindowLong(wnd, GWL_STYLE, style);//установка нового стиля
+            
             MoveWindow(wnd, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);//установка размеров окна
         }
 
@@ -375,7 +405,11 @@ namespace ExtraControls
                 _Xl = new Excel.Application();//запуск приложения
                 this._ver = this.GetExcelVersion();
 
-                _Xl.WindowState = Excel.XlWindowState.xlMinimized;
+                if (!this.display_window_title)
+                {
+                    _Xl.WindowState = Excel.XlWindowState.xlMinimized;
+                }
+
                 _Xl.DisplayExcel4Menus = false;//выключить меню
                 _Xl.DisplayFormulaBar = display_formula_bar;//выключить строку формул
                 _Xl.ShowWindowsInTaskbar = false;//не показывать в панели задач
