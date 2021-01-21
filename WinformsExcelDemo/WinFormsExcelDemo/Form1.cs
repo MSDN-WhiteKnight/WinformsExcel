@@ -39,13 +39,11 @@ namespace WinFormsExcelDemo
                 }
 
                 advancedDataGrid1.DisplayFormulaBar = cbFormulaBar.Checked;
-                advancedDataGrid1.DisplayStatusBar = cbStatusBar.Checked;
                 advancedDataGrid1.InitializeExcel();//load resources accosiated with this control
 
                 this.bGenerate.Enabled = false;
                 this.bOpenFile.Enabled = false;
                 this.cbFormulaBar.Enabled = false;
-                this.cbStatusBar.Enabled = false;
             }
         }
 
@@ -70,13 +68,11 @@ namespace WinFormsExcelDemo
         private void bGenerate_Click(object sender, EventArgs e)
         {
             advancedDataGrid1.DisplayFormulaBar = cbFormulaBar.Checked;
-            advancedDataGrid1.DisplayStatusBar = cbStatusBar.Checked;
             advancedDataGrid1.InitializeExcel();//load resources accosiated with this control
 
             this.bGenerate.Enabled = false;
             this.bOpenFile.Enabled = false;
-            this.cbFormulaBar.Enabled = false;
-            this.cbStatusBar.Enabled = false;
+            this.cbFormulaBar.Enabled = false;            
 
             /*Generates table and graph for the function specified by user*/                       
             float dx = 0.1f;//argument interval
@@ -136,12 +132,6 @@ namespace WinFormsExcelDemo
         {
             //show/hide standart Excel formula bar
             advancedDataGrid1.DisplayFormulaBar = cbFormulaBar.Checked;
-        }
-
-        private void cbStatusBar_CheckedChanged(object sender, EventArgs e)
-        {
-            //show/hide standart Excel status bar
-            advancedDataGrid1.DisplayStatusBar = cbStatusBar.Checked;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
