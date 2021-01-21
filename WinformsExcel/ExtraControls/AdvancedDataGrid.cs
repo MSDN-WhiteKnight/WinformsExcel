@@ -1,5 +1,5 @@
 /* WinForms Excel library 
- * Copyright (c) 2020,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
+ * Copyright (c) 2021,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
  * License: BSD 3-Clause */
 using System;
 using System.Collections.Generic;
