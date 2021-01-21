@@ -232,7 +232,7 @@ namespace ExtraControls
 
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),
         Category("Appearance"),
-        Description("Enables Excel window title, including ribbon manu in new versions"), DefaultValue(false)]
+        Description("Enables Excel window title, including ribbon menu in new versions"), DefaultValue(false)]
         public bool DisplayWindowTitle
         {
             get { return this.display_window_title; }
