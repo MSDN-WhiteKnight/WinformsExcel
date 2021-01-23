@@ -21,3 +21,7 @@ Excel 2016+ limitations:
 * You cannot open workbook files after InitializeExcel is called, but you can set SourceFile property before initialization to select workbook to open. If this property is empty string, control will be created with new empty workbook
 * You cannot add charts to new sheets, but you can add charts embedded to existing sheet with AddEmbeddedChart method
 * You cannot modify content of protected sheets (on older Excel versions library attempts to unprotect sheet)
+
+1.3
+- Add DisplayWindowTitle property
+- Remove checkbox to show status bar in demo app
