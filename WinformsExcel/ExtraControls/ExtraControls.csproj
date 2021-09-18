@@ -1,39 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CB7DE9BF-C576-4F54-A8C5-EDAB99941DD0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExtraControls</RootNamespace>
-    <AssemblyName>WinFormsExcel</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworks>netcoreapp3.1;net40</TargetFrameworks>
+    <Version>1.3.0</Version>
+    <Authors>MSDN-WhiteKnight</Authors>
+    <Company>WinformsExcel</Company>
+    <Product>WinformsExcel</Product>
+    <Copyright>Copyright (c) 2021, MSDN.WhiteKnight</Copyright>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/MSDN-WhiteKnight/WinformsExcel</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MSDN-WhiteKnight/WinformsExcel</RepositoryUrl>
+    <PackageTags>dotnet winforms controls excel</PackageTags>
+    <Description>Library that allows to host MS Excel interface in Windows Forms application as a user control</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <FileVersion>1.3.0.0</FileVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\WinFormsExcel.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\WinFormsExcel.xml</DocumentationFile>
-  </PropertyGroup>
+
   <ItemGroup>
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <Content Include="changes.txt"> 
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </Content>
+    <Content Include="readme.txt" >
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)'=='net40'">
     <Reference Include="Interop.Excel, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -43,73 +43,50 @@
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>.\Interop.Microsoft.Office.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    </Reference>    
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    
+    <Content Include="Interop.Excel.dll">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </Content>
+    <Content Include="Interop.Microsoft.Office.Core.dll">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </Content>
+    
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AdvancedDataGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdvancedDataGrid.Designer.cs">
-      <DependentUpon>AdvancedDataGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChartType.cs" />
-    <Compile Include="C_AdvancedDataGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="C_AdvancedDataGrid.Designer.cs">
-      <DependentUpon>C_AdvancedDataGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GridMode.cs" />
-    <Compile Include="IDataGrid.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubstituteGrid\S_AdvancedDataGrid.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SubstituteGrid\S_AdvancedDataGrid.Designer.cs">
-      <DependentUpon>S_AdvancedDataGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SubstituteGrid\S_DataSheet.cs" />
-    <Compile Include="XlSheet.cs" />
+  
+  <ItemGroup Condition="'$(TargetFramework)'=='netcoreapp3.1'">
+  
+    <COMReference Include="Excel.dll">
+      <Guid>00020813-0000-0000-c000-000000000046</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="changes.txt" />
-    <Content Include="Interop.Excel.dll" />
-    <Content Include="Interop.Microsoft.Office.Core.dll" />
-    <Content Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AdvancedDataGrid.resx">
-      <DependentUpon>AdvancedDataGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="C_AdvancedDataGrid.resx">
-      <DependentUpon>C_AdvancedDataGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SubstituteGrid\S_AdvancedDataGrid.resx">
-      <DependentUpon>S_AdvancedDataGrid.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="pkg\package.cmd" />
-    <None Include="pkg\WinFormsExcel.dll.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent Condition=" '$(Configuration)' == 'Release' ">$(ProjectDir)\pkg\package.cmd</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
