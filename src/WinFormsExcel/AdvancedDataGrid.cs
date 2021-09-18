@@ -31,7 +31,7 @@ namespace ExtraControls
         /// <param name="NewParent">handle of the new owner window</param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        public static extern int SetParent(IntPtr hWnd, IntPtr NewParent);
+        static extern int SetParent(IntPtr hWnd, IntPtr NewParent);
 
         [DllImport("user32.dll")]
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
@@ -42,21 +42,19 @@ namespace ExtraControls
         /// <summary>
         /// Sets window property defined by dword's offset in window structure
         /// </summary>
-        /// <param name="hWnd">hadle of the window to change property</param>
+        /// <param name="hWnd">handle of the window to change property</param>
         /// <param name="nIndex">property dword's offset in window structure</param>
-        /// <param name="dwNewLong">new dword value of the property</param>
-        /// <returns></returns>
+        /// <param name="dwNewLong">new dword value of the property</param>        
         [DllImport("user32.dll")]
-        public static extern uint SetWindowLong(IntPtr hWnd, int nIndex, uint dwNewLong);
+        static extern uint SetWindowLong(IntPtr hWnd, int nIndex, uint dwNewLong);
 
         /// <summary>
         /// Gets the value of the window property defined by dword's offset in window structure
         /// </summary>
-        /// <param name="nIndex">property dword's offset in window structure</param>
-        /// <param name="dwNewLong">new dword value of the property</param>
-        /// <returns></returns>
+        /// <param name="hWnd">handle of the window to get property from</param>
+        /// <param name="nIndex">property dword's offset in window structure</param>        
         [DllImport("user32.dll")]
-        public static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
+        static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
 
         /// <summary>
         /// Adjusts window position and size based on coordinates, width and height values
@@ -69,7 +67,7 @@ namespace ExtraControls
         /// <param name="repaint">repaint window after adjusting</param>
         /// <returns></returns>
         [DllImport("user32.dll")]
-        public static extern int MoveWindow(IntPtr hWnd, int x, int y, int w, int h, int repaint);
+        static extern int MoveWindow(IntPtr hWnd, int x, int y, int w, int h, int repaint);
 
         /*объявления констант для WINAPI функций*/
         /// <summary>
@@ -124,17 +122,35 @@ namespace ExtraControls
         /// </summary>
         protected bool _Initialized = false;//указывает, что Excel загружен
 
+        /// <summary>
+        /// Indicates that formula bar should be displayed
+        /// </summary>
         protected bool display_formula_bar = false;
+
+        /// <summary>
+        /// Indicates that status bar should be displayed
+        /// </summary>
         protected bool display_status_bar = false;
+
+        /// <summary>
+        /// Indicates that window title should be displayed
+        /// </summary>
         protected bool display_window_title = false;
+
+        /// <summary>
+        /// Indicates that the user input is disabled for this control
+        /// </summary>
         protected bool disabled=false;
 
-        protected List<string> tmp_file_names = new List<string>(10);
+        List<string> tmp_file_names = new List<string>(10);
 
         #endregion
 
         #region PUBLIC PROPERTIES
 
+        /// <summary>
+        /// Specifies that the use input is disabled for this control
+        /// </summary>
         [Category("Behavior"), Browsable(true), EditorBrowsable(EditorBrowsableState.Always)]
         [Description("Specifies if control intaracts with user input"),DefaultValue(false)]
         public bool Inactive
@@ -182,6 +198,9 @@ namespace ExtraControls
 
         }
 
+        /// <summary>
+        /// Enables the standard Excel status bar below worksheet area
+        /// </summary>
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),
         Category("Appearance"),
         Description("Enables standard excel status bar below worksheet area."), DefaultValue(false)]
@@ -206,6 +225,9 @@ namespace ExtraControls
 
         }
 
+        /// <summary>
+        /// Enables the standard Excel formula bar above worksheet area
+        /// </summary>
         [Browsable(true),EditorBrowsable(EditorBrowsableState.Always),
         Category("Appearance"),
         Description("Enables standard excel formula bar above worksheet area."),DefaultValue(false)]
@@ -230,6 +252,9 @@ namespace ExtraControls
 
         }
 
+        /// <summary>
+        /// Enables Excel window title, including the ribbon menu in new versions
+        /// </summary>
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),
         Category("Appearance"),
         Description("Enables Excel window title, including ribbon menu in new versions"), DefaultValue(false)]
@@ -291,6 +316,9 @@ namespace ExtraControls
 
         }
 
+        /// <summary>
+        /// Gets the count of sheets in an active workbook
+        /// </summary>
         public int SheetsCount
         {
             get
@@ -324,10 +352,16 @@ namespace ExtraControls
             }
         }
 
+        /// <summary>
+        /// Specifies the initial count of sheets for this control
+        /// </summary>
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),        
         Description("Specifies the initial count of sheets in the workbook"), DefaultValue(1)]
         public int InitialSheetsCount { get; set; }
 
+        /// <summary>
+        /// Specifies the workbook file to open when initializing this control
+        /// </summary>
         [Browsable(true), EditorBrowsable(EditorBrowsableState.Always),
         Description("Specifies workbook file to open when initializing this control "), 
         DefaultValue("")]
@@ -695,6 +729,16 @@ namespace ExtraControls
             return val;
         }
 
+        /// <summary>
+        /// Gets the address of the specified cell
+        /// </summary>
+        /// <param name="sheet">Sheet number (1-based)</param>
+        /// <param name="row">Cell row number (1-based)</param>
+        /// <param name="col">Cell column number (1-based)</param>        
+        /// <remarks>
+        /// The address consists of column represented by letter, and row represented by number 
+        /// (such as "B12" for 2nd column 12th row).
+        /// </remarks>
         public string GetCellAddress(int sheet, int row, int col)
         {
             if (!_Initialized) return null;
@@ -736,17 +780,15 @@ namespace ExtraControls
 
             return val;
         }
-        
+
 
         /// <summary>
         /// Fills the specified sheet with a content of given DataTable object
-        /// 
-        /// Throws:
-        /// InvalidOperationException (Excel is not initialized)
-        /// ArgumentException (sheet number is incorrect); 
         /// </summary>
         /// <param name="sheet">Sheet number</param>
         /// <param name="t">DataTable to fill sheet's content</param>
+        /// <exception cref="InvalidOperationException">Excel is not initialized</exception>
+        /// <exception cref="ArgumentException">Sheet number is incorrect</exception>
         public void SetSheetContent(int sheet, DataTable t)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
@@ -1272,6 +1314,10 @@ namespace ExtraControls
             
         }
 
+        /// <summary>
+        /// Gets the name for the specified sheet
+        /// </summary>
+        /// <param name="sheet">Sheet number (1-based)</param>
         public string GetSheetName(int sheet)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
