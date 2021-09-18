@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyExcel", "MyExcel\MyExcel.csproj", "{1984F9D1-B63E-4500-9CAD-FD3F39236099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtraControls", "ExtraControls\ExtraControls.csproj", "{CB7DE9BF-C576-4F54-A8C5-EDAB99941DD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsExcel", "WinFormsExcel\WinFormsExcel.csproj", "{CB7DE9BF-C576-4F54-A8C5-EDAB99941DD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

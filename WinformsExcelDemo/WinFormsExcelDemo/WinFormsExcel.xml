@@ -10,46 +10,6 @@
             one or several tables of data
             </summary>
         </member>
-        <member name="T:ExtraControls.IDataGrid">
-            <summary>
-            Provides a set of properties and methods shared by DataGrid controls able to display multiple data tables
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.WS_CHILD">
-            <summary>
-            Window style: child window, has no titlebar or sizebox
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.WS_POPUP">
-            <summary>
-            Window style: popup window
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.WS_BORDER">
-            <summary>
-            Window style: has border
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.WS_CAPTION">
-            <summary>
-            Window style:  WS_BORDER | WS_DLGFRAME
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.WS_THICKFRAME">
-            <summary>
-            Window style:  frame allows to resize this window
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.WS_SIZEBOX">
-            <summary>
-            Window style:  frame allows to resize this window
-            </summary>
-        </member>
-        <member name="F:ExtraControls.AdvancedDataGrid.GWL_STYLE">
-            <summary>
-            The offset of style dword in window structure (passed to GetWindowLong or SetWindowLong)
-            </summary>
-        </member>
         <member name="M:ExtraControls.AdvancedDataGrid.SetParent(System.IntPtr,System.IntPtr)">
             <summary>
             Changes hWnd's owner to NewParent window 
@@ -87,6 +47,41 @@
             <param name="repaint">repaint window after adjusting</param>
             <returns></returns>
         </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_CHILD">
+            <summary>
+            Window style: child window, has no titlebar or sizebox
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_POPUP">
+            <summary>
+            Window style: popup window
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_BORDER">
+            <summary>
+            Window style: has border
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_CAPTION">
+            <summary>
+            Window style:  WS_BORDER | WS_DLGFRAME
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_THICKFRAME">
+            <summary>
+            Window style:  frame allows to resize this window
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.WS_SIZEBOX">
+            <summary>
+            Window style:  frame allows to resize this window
+            </summary>
+        </member>
+        <member name="F:ExtraControls.AdvancedDataGrid.GWL_STYLE">
+            <summary>
+            The offset of style dword in window structure (passed to GetWindowLong or SetWindowLong)
+            </summary>
+        </member>
         <member name="F:ExtraControls.AdvancedDataGrid._Xl">
             <summary>
             Underlying Excel appplication of this control instance
@@ -95,6 +90,21 @@
         <member name="F:ExtraControls.AdvancedDataGrid._Initialized">
             <summary>
             Indicates that excel was loaded for this control instance
+            </summary>
+        </member>
+        <member name="P:ExtraControls.AdvancedDataGrid.DataSource">
+            <summary>
+            Gets or sets the content of currently active Excel sheet via DataTable object        
+            </summary>
+        </member>
+        <member name="P:ExtraControls.AdvancedDataGrid.ActiveSheet">
+            <summary>
+            Gets or sets current active sheet.                
+            </summary>
+        </member>
+        <member name="P:ExtraControls.AdvancedDataGrid.XlApplication">
+            <summary>
+            Gets the underlying Excel Application object of this control instance (read-only)
             </summary>
         </member>
         <member name="M:ExtraControls.AdvancedDataGrid.#ctor">
@@ -276,21 +286,6 @@
             содержимое данного метода при помощи редактора кода.
             </summary>
         </member>
-        <member name="P:ExtraControls.AdvancedDataGrid.DataSource">
-            <summary>
-            Gets or sets the content of currently active Excel sheet via DataTable object        
-            </summary>
-        </member>
-        <member name="P:ExtraControls.AdvancedDataGrid.ActiveSheet">
-            <summary>
-            Gets or sets current active sheet.                
-            </summary>
-        </member>
-        <member name="P:ExtraControls.AdvancedDataGrid.XlApplication">
-            <summary>
-            Gets the underlying Excel Application object of this control instance (read-only)
-            </summary>
-        </member>
         <member name="T:ExtraControls.ChartType">
             <summary>
             Represents Excel chart type
@@ -318,6 +313,16 @@
             Creates C_AdvancedDataGrid control in specified mode
             </summary>
         </member>
+        <member name="P:ExtraControls.C_AdvancedDataGrid.Mode">
+            <summary>
+            Gets or sets the current grid mode. Setting this property will cause control to be initialized again.
+            </summary>
+        </member>
+        <member name="P:ExtraControls.C_AdvancedDataGrid.BaseGrid">
+            <summary>
+            Returns the underlying grid, which type is determined by Mide property 
+            </summary>
+        </member>
         <member name="M:ExtraControls.C_AdvancedDataGrid.Initialize(ExtraControls.GridMode)">
             <summary>
             Initializes this control in specified mode
@@ -340,14 +345,9 @@
             содержимое данного метода при помощи редактора кода.
             </summary>
         </member>
-        <member name="P:ExtraControls.C_AdvancedDataGrid.Mode">
+        <member name="T:ExtraControls.IDataGrid">
             <summary>
-            Gets or sets the current grid mode. Setting this property will cause control to be initialized again.
-            </summary>
-        </member>
-        <member name="P:ExtraControls.C_AdvancedDataGrid.BaseGrid">
-            <summary>
-            Returns the underlying grid, which type is determined by Mide property 
+            Provides a set of properties and methods shared by DataGrid controls able to display multiple data tables
             </summary>
         </member>
         <member name="T:ExtraControls.SubstituteGrid.S_AdvancedDataGrid">
@@ -494,6 +494,11 @@
             <param name="new_index">Target sheet index</param>
             <param name="before">Specifies that sheet must be placed before the target sheet</param>
         </member>
+        <member name="P:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.ActiveSheet">
+            <summary>
+            Gets or sets current active sheet.                
+            </summary>
+        </member>
         <member name="F:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.components">
             <summary> 
             Требуется переменная конструктора.
@@ -509,11 +514,6 @@
             <summary> 
             Обязательный метод для поддержки конструктора - не изменяйте 
             содержимое данного метода при помощи редактора кода.
-            </summary>
-        </member>
-        <member name="P:ExtraControls.SubstituteGrid.S_AdvancedDataGrid.ActiveSheet">
-            <summary>
-            Gets or sets current active sheet.                
             </summary>
         </member>
         <member name="T:ExtraControls.SubstituteGrid.S_DataSheet">
