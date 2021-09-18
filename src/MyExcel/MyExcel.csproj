@@ -77,9 +77,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtraControls\ExtraControls.csproj">
-      <Project>{CB7DE9BF-C576-4F54-A8C5-EDAB99941DD0}</Project>
-      <Name>ExtraControls</Name>
+    <ProjectReference Include="..\WinFormsExcel\WinFormsExcel.csproj">
+      <Project>{cb7de9bf-c576-4f54-a8c5-edab99941dd0}</Project>
+      <Name>WinFormsExcel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
