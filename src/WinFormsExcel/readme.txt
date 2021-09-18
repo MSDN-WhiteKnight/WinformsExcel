@@ -3,9 +3,9 @@ Developer: MSDN.WhiteKnight
 Web site: http://smallsoft2.blogspot.ru/
 
 Requirements:
-Visual Studio 2010+
-.NET Framework 4.0 (must be present on target machine)
+.NET Framework 4.0+ or .NET Core 3.1+ (must be present on target machine)
 MS Excel 2003+ (must be present on target machine)
+Visual Studio 2010+ (for .NET Framework) or Visual Studio 2019+ (for .NET Core)
 
 --- Overview ---
 WinForms Excel Library allows to host MS Excel interface in Windows Forms application as a user control in order to display and edit one or more tables of data. The Excel application is started in different process, but the interface is fully integrated into your application as for any usual control. Basically, it works like DataGridView, but enables user to take advantage of various data processing and visualisation capabilities of MS Excel, which might be useful in scientific, engineering or financial applications. The library interacts with Excel via Primary Interop Assemblies. Currently implemented functionality:
