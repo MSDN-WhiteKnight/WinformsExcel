@@ -9,6 +9,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using WinFormsExcel.Internal;
 
 /*Windows Forms user control providing the functionality of displaying and editing data in MS Excel window.
  http://smallsoft2.blogspot.ru/
@@ -22,92 +23,6 @@ namespace ExtraControls
     /// </summary>
     public partial class AdvancedDataGrid : UserControl, IDisposable, IDataGrid
     {
-        /*Объявления неуправляемых WINAPI функций*/
-        #region WINAPI interaction
-        /// <summary>
-        /// Changes hWnd's owner to NewParent window 
-        /// </summary>
-        /// <param name="hWnd">handle of the window to change owner</param>
-        /// <param name="NewParent">handle of the new owner window</param>
-        /// <returns></returns>
-        [DllImport("user32.dll")]
-        static extern int SetParent(IntPtr hWnd, IntPtr NewParent);
-
-        [DllImport("user32.dll")]
-        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        const int SW_HIDE = 0;
-        const int SW_SHOW = 5;
-
-        /// <summary>
-        /// Sets window property defined by dword's offset in window structure
-        /// </summary>
-        /// <param name="hWnd">handle of the window to change property</param>
-        /// <param name="nIndex">property dword's offset in window structure</param>
-        /// <param name="dwNewLong">new dword value of the property</param>        
-        [DllImport("user32.dll")]
-        static extern uint SetWindowLong(IntPtr hWnd, int nIndex, uint dwNewLong);
-
-        /// <summary>
-        /// Gets the value of the window property defined by dword's offset in window structure
-        /// </summary>
-        /// <param name="hWnd">handle of the window to get property from</param>
-        /// <param name="nIndex">property dword's offset in window structure</param>        
-        [DllImport("user32.dll")]
-        static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
-
-        /// <summary>
-        /// Adjusts window position and size based on coordinates, width and height values
-        /// </summary>
-        /// <param name="hWnd">handle of the window to adjust values</param>
-        /// <param name="x">X coordinate of window on the screen</param>
-        /// <param name="y">Y coordinate of window on the screen</param>
-        /// <param name="w">window's width</param>
-        /// <param name="h">window's height</param>
-        /// <param name="repaint">repaint window after adjusting</param>
-        /// <returns></returns>
-        [DllImport("user32.dll")]
-        static extern int MoveWindow(IntPtr hWnd, int x, int y, int w, int h, int repaint);
-
-        /*объявления констант для WINAPI функций*/
-        /// <summary>
-        /// Window style: child window, has no titlebar or sizebox
-        /// </summary>
-        const uint WS_CHILD = 0x40000000;
-
-        /// <summary>
-        /// Window style: popup window
-        /// </summary>
-        const uint WS_POPUP = 0x80000000;
-
-        /// <summary>
-        /// Window style: has border
-        /// </summary>
-        const uint WS_BORDER = 0x00800000;
-
-        /// <summary>
-        /// Window style:  WS_BORDER | WS_DLGFRAME
-        /// </summary>
-        const uint WS_CAPTION = 0x00C00000;  
-
-        /// <summary>
-        /// Window style:  frame allows to resize this window
-        /// </summary>
-        const uint WS_THICKFRAME = 0x00040000;
-
-        /// <summary>
-        /// Window style:  frame allows to resize this window
-        /// </summary>
-        const uint WS_SIZEBOX = WS_THICKFRAME;
-
-        const uint WS_SYSMENU = 0x00080000;
-
-        /// <summary>
-        /// The offset of style dword in window structure (passed to GetWindowLong or SetWindowLong)
-        /// </summary>
-        const int GWL_STYLE = (-16);//смещение стиля в структуре окна
-        #endregion
-
         #region PROTECTED VARIABLES
 
         /// <summary>
@@ -384,25 +299,26 @@ namespace ExtraControls
         void EmbedExcel()
         {
             IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
-            SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
+            NativeMethods.SetParent(wnd, this.Handle);//изменение владельца окна Excel на этот элемент управления
 
-            uint style = GetWindowLong(wnd, GWL_STYLE);//получим стиль окна
-            style &= ~WS_SIZEBOX;//уберем возможность изменения размера
+            uint style = NativeMethods.GetWindowLong(wnd, NativeMethods.GWL_STYLE);//получим стиль окна
+            style &= ~NativeMethods.WS_SIZEBOX;//уберем возможность изменения размера
 
             if (!this.display_window_title)
             {
-                style &= ~WS_CAPTION;//уберем заголовок
+                style &= ~NativeMethods.WS_CAPTION;//уберем заголовок
             }
 
-            SetWindowLong(wnd, GWL_STYLE, style);//установка нового стиля
-            
-            MoveWindow(wnd, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);//установка размеров окна
+            NativeMethods.SetWindowLong(wnd, NativeMethods.GWL_STYLE, style);//установка нового стиля
+
+            //установка размеров окна
+            NativeMethods.MoveWindow(wnd, 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);
         }
 
         void UnembedExcel()
         {
             IntPtr wnd = (IntPtr)_Xl.Hwnd;//дескриптор окна Excel
-            SetParent(wnd, IntPtr.Zero);            
+            NativeMethods.SetParent(wnd, IntPtr.Zero);            
             _Xl.WindowState = Excel.XlWindowState.xlMaximized;
             _Xl.DisplayExcel4Menus = false;
         }
@@ -500,7 +416,7 @@ namespace ExtraControls
                 try
                 {
                     _Xl.Visible = false;
-                    SetParent((IntPtr)_Xl.Hwnd, (IntPtr)0);//убираем владельца окна                    
+                    NativeMethods.SetParent((IntPtr)_Xl.Hwnd, (IntPtr)0);//убираем владельца окна                    
                 }
                 catch (Exception) { }
 
@@ -572,7 +488,9 @@ namespace ExtraControls
             if (_Xl == null) return;
             try
             {
-                MoveWindow((IntPtr)(_Xl.Hwnd), 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1);
+                NativeMethods.MoveWindow(
+                    (IntPtr)(_Xl.Hwnd), 0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height, 1
+                    );
             }
             catch (Exception) { }
         }
