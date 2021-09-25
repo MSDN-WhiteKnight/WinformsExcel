@@ -1407,6 +1407,11 @@ namespace ExtraControls
         }
         #endregion
 
+        /// <summary>
+        /// Saves the content of the current workbook into a specified file.
+        /// </summary>
+        /// <param name="file">A path to the file to save the workbook</param>
+        /// <exception cref="InvalidOperationException"> Excel is not initialized </exception>
         public void SaveIntoFile(string file)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
@@ -1441,6 +1446,11 @@ namespace ExtraControls
 
         }
 
+        /// <summary>
+        /// Closes the current workbook, and loads a new empty workbook into this control
+        /// </summary>
+        /// <exception cref="InvalidOperationException"> Excel is not initialized </exception>
+        /// <exception cref="NotSupportedException"> Not supported in Excel 2016+ </exception>
         public void NewEmptyWorkbook()
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
@@ -1471,6 +1481,13 @@ namespace ExtraControls
 
         }
 
+        /// <summary>
+        /// Loads the contents of the specified workbook file into this control
+        /// </summary>
+        /// <param name="file">A path to the file</param>
+        /// <exception cref="InvalidOperationException"> Excel is not initialized </exception>
+        /// <exception cref="NotSupportedException"> Not supported in Excel 2016+ </exception>
+        /// <exception cref="System.IO.FileNotFoundException"> File does not exist </exception>
         public void OpenFile(string file)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
@@ -1557,7 +1574,20 @@ namespace ExtraControls
             }
         }
 
-        public void AddChart(int sheet, string cell1, string cell2, ChartType ct = ChartType.xlXYScatterLines,string title = "" )
+        /// <summary>
+        /// Adds chart based on the data of the specified sheet into the current workbook. 
+        /// The chart is placed on the separate sheet.
+        /// </summary>
+        /// <param name="sheet">Number of the sheet (1-based) from which to use data for the chart</param>
+        /// <param name="cell1">Address of upper-left cell of chart’s source data range</param>
+        /// <param name="cell2">Address of lower-right cell of chart’s source data range</param>
+        /// <param name="ct">Chart type (optional)</param>
+        /// <param name="title">Chart title (optional)</param>
+        /// <exception cref="InvalidOperationException"> Excel is not initialized </exception>
+        /// <exception cref="NotSupportedException"> Not supported in Excel 2016+ </exception>
+        public void AddChart(
+            int sheet, string cell1, string cell2, ChartType ct = ChartType.xlXYScatterLines,
+            string title = "" )
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");
             if (this._ver >= 16) throw new NotSupportedException("This API is not supported in Excel 2016+");
@@ -1565,6 +1595,19 @@ namespace ExtraControls
             this.AddChartImpl(false, sheet, cell1, cell2, 0, 0, 0, 0, ct, title);
         }
 
+        /// <summary>
+        /// Adds chart based on the data of the specified sheet. The chart is placed on the same sheet.
+        /// </summary>
+        /// <param name="sheet">Number of the sheet (1-based) from which to use data for the chart</param>
+        /// <param name="cell1">Address of upper-left cell of chart’s source data range</param>
+        /// <param name="cell2">Address of lower-right cell of chart’s source data range</param>
+        /// <param name="x">X coordinate of the chart location</param>
+        /// <param name="y">Y coordinate of the chart location</param>
+        /// <param name="w">Width of the chart</param>
+        /// <param name="h">Height of the chart</param>
+        /// <param name="ct">Chart type (optional)</param>
+        /// <param name="title">Chart title (optional)</param>
+        /// <exception cref="InvalidOperationException"> Excel is not initialized </exception>
         public void AddEmbeddedChart(
             int sheet, string cell1, string cell2,
             double x, double y, double w, double h,
