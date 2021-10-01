@@ -28,7 +28,7 @@ namespace ExtraControls
         Excel = 2,
         
         /// <summary>
-        /// Uses substitited implementation (S_AdvancedDataGrid)
+        /// Uses substituted implementation (S_AdvancedDataGrid)
         /// </summary>
         Substitute =3
     }
