@@ -1,12 +1,10 @@
 ﻿/* WinForms Excel library 
- * Copyright (c) 2020,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
+ * Copyright (c) 2021,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
  * License: BSD 3-Clause */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 /*WinForms Excel Library - C_AdvancedDataGrid user control
@@ -21,9 +19,19 @@ namespace ExtraControls
     /// </summary>
     public partial class C_AdvancedDataGrid : UserControl, IDisposable, IDataGrid
     {
-        protected IDataGrid basegrid;//underlying grid control used to actually display data
+        /// <summary>
+        /// Specifies the underlying grid control used to actually display data
+        /// </summary>
+        protected IDataGrid basegrid;
 
-        protected bool excel_on;//uses Excel mode (AdvancedDataGrid)
+        /// <summary>
+        /// Indicates that this control uses Excel mode (backed by AdvancedDataGrid)
+        /// </summary>
+        protected bool excel_on;
+
+        /// <summary>
+        /// Indicates that excel was loaded for this control instance
+        /// </summary>
         protected bool initialized;//underlying grid is initialized        
 
         /// <summary>
@@ -186,9 +194,11 @@ namespace ExtraControls
 
         }
 
-
         #region RESOURCE CLEANUP METHODS
 
+        /// <summary>
+        /// Cleans up resources used by this control. The control will be in uninitialized state.
+        /// </summary>
         public void Destroy()
         {
             if (initialized && excel_on)
@@ -205,6 +215,9 @@ namespace ExtraControls
             catch (Exception) { ;}
         }
 
+        /// <summary>
+        /// Destroys this control instance
+        /// </summary>
         ~C_AdvancedDataGrid()
         {
             try { this.Destroy(); }
@@ -213,7 +226,7 @@ namespace ExtraControls
         #endregion
 
         /*Underlying grid interface wrappers*/
-
+        ///<inheritdoc/>
         public object DataSource
         {
             get
@@ -226,6 +239,7 @@ namespace ExtraControls
             }
         }
 
+        ///<inheritdoc/>
         public int ActiveSheet
         {
             get
@@ -238,76 +252,88 @@ namespace ExtraControls
             }
         }
 
+        ///<inheritdoc/>
         public int SheetsCount
         {
             get { return basegrid.SheetsCount; }
         }
 
+        ///<inheritdoc/>
         public void SetCellContent(int sheet, int row, int col, object val)
         {
             basegrid.SetCellContent(sheet, row, col, val);
         }
 
+        ///<inheritdoc/>
         public object GetCellContent(int sheet, int row, int col)
         {
             return basegrid.GetCellContent(sheet, row, col);
         }
 
+        ///<inheritdoc/>
         public void SetSheetContent(int sheet, DataTable t)
         {
             basegrid.SetSheetContent(sheet, t);
         }
 
+        ///<inheritdoc/>
         public DataTable GetSheetContent(int sheet, bool FirstRowHasHeaders, int n_col = 0, int n_row = 0)
         {
             return basegrid.GetSheetContent(sheet, FirstRowHasHeaders, n_col, n_row);
         }
 
+        ///<inheritdoc/>
         public int GetActiveSheet()
         {
             return basegrid.GetActiveSheet();
         }
 
+        ///<inheritdoc/>
         public void SetActiveSheet(int index)
         {
             basegrid.SetActiveSheet(index);
         }
 
+        ///<inheritdoc/>
         public void DeleteSheet(int index)
         {
             basegrid.DeleteSheet(index);
         }
 
+        ///<inheritdoc/>
         public void AddSheet(string name = "")
         {
             basegrid.AddSheet(name);
         }
 
+        ///<inheritdoc/>
         public List<XlSheet> GetSheets()
         {
             return basegrid.GetSheets();
         }
 
+        ///<inheritdoc/>
         public void SetSheetName(int sheet, string name)
         {
             basegrid.SetSheetName(sheet, name);
         }
 
+        ///<inheritdoc/>
         public string GetSheetName(int sheet)
         {
             return basegrid.GetSheetName(sheet);
         }
 
+        ///<inheritdoc/>
         public int FindSheet(string name)
         {
             return basegrid.FindSheet(name);
         }
 
+        ///<inheritdoc/>
         public void NewEmptyWorkbook()
         {
             basegrid.NewEmptyWorkbook();
         }
-
-        
     }
 }

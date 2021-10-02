@@ -84,6 +84,10 @@ namespace ExtraControls
         /// <summary>
         /// Gets or sets the content of currently active Excel sheet via DataTable object        
         /// </summary>
+        /// <remarks>
+        /// NOTE: AdvancedDataGrid does not support data binding. 
+        /// The DataSource Property is only a convenient way to manipulate active sheet’s contents.
+        /// </remarks>
         [Browsable(false), EditorBrowsable(EditorBrowsableState.Never)]
         public object DataSource
         {
@@ -1189,7 +1193,7 @@ namespace ExtraControls
         /// ArgumentException (index is incorrect or name is not specified);
         /// </summary>
         /// <param name="sheet">Sheet number</param>
-        /// <param name="name">Sheet ne name</param>
+        /// <param name="name">Sheet name</param>
         public void SetSheetName(int sheet,string name)
         {
             if (!_Initialized) throw new InvalidOperationException("Excel is not initialized");

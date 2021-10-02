@@ -1,12 +1,11 @@
 ﻿/* WinForms Excel library 
- * Copyright (c) 2020,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
+ * Copyright (c) 2021,  MSDN.WhiteKnight (https://github.com/MSDN-WhiteKnight) 
  * License: BSD 3-Clause */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 /*Windows Forms Excel Library - S_AdvancedDataGrid user control
@@ -324,9 +323,8 @@ namespace ExtraControls.SubstituteGrid
 
         /// <summary>
         /// Gets the index of sheet with specified name. Returns -1 if the sheet is not found.
-        ///         
         /// </summary>
-        /// <param name="name">Sheet name</param>
+        /// <param name="sheet">Sheet name</param>
         /// <returns>Sheet index or -1</returns>
         public string GetSheetName(int sheet)
         {
@@ -335,13 +333,7 @@ namespace ExtraControls.SubstituteGrid
             return sheets[sheet - 1].name;
         }
 
-        /// <summary>
-        /// Inserts the worksheet before or after the target worksheet in the workbook
-        ///          
-        /// </summary>
-        /// <param name="curr_index">Number of sheet to move</param>
-        /// <param name="new_index">Target sheet index</param>
-        /// <param name="before">Specifies that sheet must be placed before the target sheet</param>
+        ///<inheritdoc/>
         public int FindSheet(string name)
         {
             foreach (S_DataSheet s in sheets)
@@ -350,8 +342,8 @@ namespace ExtraControls.SubstituteGrid
             }
             return -1;
         }
-        
 
+        ///<inheritdoc/>
         public void NewEmptyWorkbook()
         {
             for (int i = 1; i <= 3; i++)
@@ -361,6 +353,7 @@ namespace ExtraControls.SubstituteGrid
             ActivateSheet(sheets[0]);
         }
 
+        ///<inheritdoc/>
         public object DataSource
         {
             set
@@ -413,6 +406,7 @@ namespace ExtraControls.SubstituteGrid
             }
         }
 
+        ///<inheritdoc/>
         public int SheetsCount
         {
             get
