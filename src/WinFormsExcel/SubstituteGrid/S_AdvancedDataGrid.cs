@@ -425,6 +425,9 @@ namespace ExtraControls.SubstituteGrid
             }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the user can edit the contents of this control
+        /// </summary>
         [Category("Behavior"),Browsable(true),EditorBrowsable(EditorBrowsableState.Always)]
         [Description("Specifies if user is allowed to edit data in this control"),DefaultValue(false)]
         public bool ReadOnly
