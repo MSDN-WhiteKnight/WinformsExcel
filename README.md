@@ -6,9 +6,9 @@
 
 ## Requirements
 
-- Visual Studio 2010+
-- .NET Framework 4.0+ (must be present on target machine)
+- .NET Framework 4.0+ or .NET Core 3.1+ (must be present on target machine)
 - MS Excel 2003+ (must be present on target machine)
+- Visual Studio 2010+ (for .NET Framework) or Visual Studio 2019+ (for .NET Core)
 
 ## Overview
 
@@ -24,6 +24,8 @@ WinForms Excel Library allows to host MS Excel interface in Windows Forms applic
 - Direct access to Excel interoperability interfaces via Application object.
 
 The library distribution package contains demo application project (Visual Studio 2010)
+
+See [documentation](http://smallsoft2.blogspot.com/2016/11/winforms-excel-library.html) for more information.
 
 ## Errors
 
